@@ -30,7 +30,7 @@
             <a class="nav-link" href="/html/book/book_general_analysis.html">Kindle Book Store</a>
           </li>
           <li class="nav-item" style="font-size: larger;">
-            <a class="nav-link" href="/html/shortread/shortread_general_analysis.html">Kindle Short Read</a>
+            <a class="nav-link" href="/html/shortread/shortread_year_analysis.html">Kindle Short Read</a>
           </li>
         </ul>
       </div>
@@ -41,7 +41,7 @@
     <!-- footer -->
     <nav class="navbar navbar-toggleable-md fixed-bottom navbar-light bg-faded">
       <img class="navbar-brand" src="img/epfl_logo.png" height="35" width="60">
-      <span class="navbar-brand" style="color: #636c72; font-size: medium;">2017 EPFL Applied Data Analysis Course</span>
+      <a href="https://dlab.epfl.ch/" class="navbar-brand" style="color: #636c72; font-size: medium;">2017 EPFL Applied Data Analysis Course</a>
       <div class="collapse navbar-collapse"></div>
       <span class="navbar-brand" style="color: #636c72; font-size: medium;">©Copyright 2017/2018</span>
     </nav>
@@ -91,9 +91,9 @@
                     &emsp;&emsp;Reviews and ratings are everything for Amazon. One of the main reasons why customers trust Amazon, is the presence of reviews and ratings about products, which basically helps them understand about almost every detail of the product. But, how people review? Tons of reviews on Amazon make themselves as the best dataset for numerical and textual data analysis which is exactly what we are eager to do.
                 </p>
                 <p class="text-center">
-                  <img src="/img/kindle_logo.png" height=10% width=20%>
+                  <a href="https://www.amazon.com/s/ref=nb_sb_noss?url=search-alias%3Ddigital-text&field-keywords="><img src="/img/kindle_logo.png" height=10% width=20%></a>
                   &emsp;&emsp;&emsp;
-                  <img src="/img/book_logo.png" height=10% width=20%>
+                  <a href="https://www.amazon.com/s/ref=nb_sb_noss?url=search-alias%3Dstripbooks&field-keywords="><img src="/img/book_logo.png" height=10% width=20%></a>
                 </p>
 
                 <p style="font-size: 16px;">
@@ -109,17 +109,34 @@
                 <span class="display-4" style="font-size: 20px">Research Direction</span>
             </div>
             <div class="card-block">
-                <p style="font-size: 16px;">
-                    &emsp;&emsp;
-                </p>
+              <p class="font-weight-bold" style="font-size: 16px;">
+                &emsp;&emsp;
+                Facile analysis:
+              </p>
+              <ul style="font-size: 16px;">
+                <li>How average rating varies between different categories?</li>
+                <li>Chronologically, how the ratings of books change?</li>
+                <li>How to label or categorize or even score the reviews? e.g. How to define positive and negative reviews? (Sentiment analysis)</li>
+                <li>Can we get the keywords of reviews of each category? How do they change over years?</li>
+              </ul>
+              <br>
+              <p class="font-weight-bold" style="font-size: 16px;">
+                &emsp;&emsp;
+                Comprehensive analysis:
+              </p>
+              <ul style="font-size: 16px;">
+                <li>For each rating, what is the style of people’s review? (e.g. length of reviews, type of words used, concerning points, etc.)</li>
+                <li>Is there any inner connection between one’s rating of a book and his/her review? How can we reasonably vectorize review to make it suitable for analytical handling? (Try to make use of spectral graph theory and machine learning)</li>
+                <li>Is there any inner connection between reviews and the book's category? How can we decide the category according to the reviews? (Try to find the keywords of each category and match the keywords with input reviews.)</li>
+                <li>Based on the review and rating, is it possible to automatically generate some general summary reviews for each rate level? Maybe with the key words we have already found. Or, maybe it’s the stage for neural network.</li>
+              </ul>
             </div>
           </div>
 
           <br>
           <div class="row">
-            <!-- Metadata -->
             <div class="col-lg-6">
-              <div class="card">
+              <div class="card mb-3 h-100">
                 <div class="card-header">
                   <span class="display-4" style="font-size: 20px">Project Structure</span>
                 </div>
@@ -127,11 +144,14 @@
                   <p style="font-size: 16px;">
                     &emsp;&emsp;
                   </p>
+                  <!--<div class="embed-responsive embed-responsive-1by1">
+                    <iframe width="900" height="800" frameborder="0" scrolling="no" src="//plot.ly/~xiangzhe/3.embed?showlink=false"></iframe>
+                  </div>-->
                 </div>
               </div>
             </div>
             <div class="col-lg-6">
-              <div class="card">
+              <div class="card mb-3 h-100">
                 <div class="card-header">
                     <span class="display-4" style="font-size: 20px">Project Timeline</span>
                 </div>
