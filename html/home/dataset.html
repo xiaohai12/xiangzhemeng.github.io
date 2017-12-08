@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<html lang="en" class="gr__v4-alpha_getbootstrap_com">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="icon" href="/img/ada_logo.png">
+  <title>Reviews are KING</title>
+  <!-- Bootstrap core CSS -->
+  <link href="/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Custom styles for this website -->
+  <link href="/css/dashboard.css" rel="stylesheet">
+  <!-- Page level plugin CSS-->
+  <link href="/css/dataTables.bootstrap4.css" rel="stylesheet">
+  <!-- Custom styles for this template-->
+  <link href="/css/sb-admin.css" rel="stylesheet">
+</head>
+
+<body>
+<nav class="navbar navbar-toggleable-md navbar-inverse fixed-top bg-primary">
+  <button class="navbar-toggler navbar-toggler-right hidden-lg-up" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <a class="navbar-brand" href="/index.html"><img src="/img/ada_logo.png" height="35" width="35"></a>
+
+  <!-- Header -->
+  <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active" style="font-size: larger;">
+        <a class="nav-link" href="/index.html">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item" style="font-size: larger;">
+        <a class="nav-link" href="/html/book/book_general_analysis.html">Kindle Book Store</a>
+      </li>
+      <li class="nav-item" style="font-size: larger;">
+        <a class="nav-link" href="/html/shortread/shortread_general_analysis.html">Kindle Short Read</a>
+      </li>
+    </ul>
+  </div>
+  <span class="navbar-brand">Amazon Reviews Data Analysis</span>
+  <img src="/img/amazon_logo.png" height="20" width="70">
+</nav>
+
+<!-- footer -->
+<nav class="navbar navbar-toggleable-md fixed-bottom navbar-light bg-faded">
+  <img class="navbar-brand" src="/img/epfl_logo.png" height="35" width="60">
+  <span class="navbar-brand" style="color: #636c72; font-size: medium;">2017 EPFL Applied Data Analysis Course</span>
+  <div class="collapse navbar-collapse"></div>
+  <span class="navbar-brand" style="color: #636c72; font-size: medium;">©Copyright 2017/2018</span>
+</nav>
+
+<!-- Menu -->
+<div class="container-fluid">
+  <div class="row">
+    <nav class="col-sm-3 col-md-2 hidden-xs-down bg-faded sidebar">
+      <div class="row">
+        <img class="offset-md-3 nav nav-pills flex-column" src="/img/ada_logo.png" height=20% width=50%>
+      </div>
+      <ul class="nav nav-pills flex-column">
+        <li class="nav-item" style="font-size: larger;">
+          <a class="nav-link" href="/index.html">About Project</a>
+        </li>
+        <li class="nav-item" style="font-size: larger;">
+          <a class="nav-link active" href="dataset.html">About Data<span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item" style="font-size: larger;">
+          <a class="nav-link" href="group.html">About Us</a>
+        </li>
+      </ul>
+
+      <ul class="nav nav-pills flex-column tooltip-bottom card-footer">
+        <li class="nav-item" style="font-size: medium;">
+          <a class="nav-link" href="https://github.com/xiangzhemeng/epfl-ada2017-homework-project/tree/master/Project">Github</a>
+        </li>
+        <li class="nav-item" style="font-size: medium;">
+          <a class="nav-link" href="#">Download Source</a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Main container -->
+    <main class="col-sm-9 offset-sm-3 col-md-10 offset-md-2 pt-3">
+
+      <!-- Amazon Reviews Dataset Structure-->
+      <h2>Amazon Reviews Dataset</h2>
+      <div class="table-responsive">
+        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+          <thead>
+          <tr>
+            <td>asin</td>
+            <td>category</td>
+            <td>rate</td>
+            <td>price</td>
+            <td>summary</td>
+            <td>reviewText</td>
+            <td>unixReviewTime</td>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td>B000FBFMVG</td>
+            <td>Two hours or more (65-100 pages)</td>
+            <td>5.0</td>
+            <td>1.99</td>
+            <td>An interesting short story.</td>
+            <td>Really shouldn't have Han Solo on the cover as he doesn't come into the story.This story is all about Chewbacca and his family.I won't give anything away, but it is a nice, if short, read.</td>
+            <td>2014-02-15</td>
+          </tr>
+          <tr>
+            <td>B000FBFMVG</td>
+            <td>Two hours or more (65-100 pages)</td>
+            <td>3.0</td>
+            <td>1.99</td>
+            <td>Great</td>
+            <td>This book was a good idea. I have always wanted to read more about Chewbaccas son Lumpy. Though I do wish he would have added more to the ending. I would recommend this book to anyone who loves Star Wars and Chewbacca.</td>
+            <td>2013-04-01</td>
+          </tr>
+          <tr>
+            <td>B000FBFMVG</td>
+            <td>Two hours or more (65-100 pages)</td>
+            <td>5.0</td>
+            <td>1.99</td>
+            <td>Another read</td>
+            <td>Great short story. It gives a little more insight into the walking carpet we all love, this time as a father</td>
+            <td>2014-01-02</td>
+          </tr>
+          <tr>
+            <td>B000FBFMVG</td>
+            <td>Two hours or more (65-100 pages)</td>
+            <td>5.0</td>
+            <td>1.99</td>
+            <td>Love It</td>
+            <td>I love anything with Chewbacca in it.  Him and his family is just a bonus.  Kind of nice to see him having problems with his son.</td>
+            <td>2013-10-11</td>
+          </tr>
+          <tr>
+            <td>B000FBFMVG</td>
+            <td>Two hours or more (65-100 pages)</td>
+            <td>5.0</td>
+            <td>1.99</td>
+            <td>my collection</td>
+            <td>I love the stories with Chewie in them! this e-book is no exception. great character introductions and wonderful story line.</td>
+            <td>2014-01-27</td>
+          </tr>
+          <tr>
+            <td>B000JMKNQ0</td>
+            <td>Two hours or more (65-100 pages)</td>
+            <td>5.0</td>
+            <td>7.99</td>
+            <td>Another reader</td>
+            <td>Good read. I enjoyed the look into another side of Boba fett. I suggest is as a gate way to the next set</td>
+            <td>2014-01-02</td>
+          </tr>
+          <tr>
+            <td>B000JMKNQ0</td>
+            <td>Two hours or more (65-100 pages)</td>
+            <td>5.0</td>
+            <td>7.99</td>
+            <td>Fetts the man</td>
+            <td>Boba Fett sort of gets screwed, but turns it around when he starts screwing over the Yuzahn Vong.  Very Cool.</td>
+            <td>2013-10-11</td>
+          </tr>
+          <tr>
+            <td>B000JMKNQ0</td>
+            <td>Two hours or more (65-100 pages)</td>
+            <td>3.0</td>
+            <td>7.99</td>
+            <td>Star Wars: Bobba Fett: A Practical Man</td>
+            <td>This is an ebook and is a good read, but why not just include with one of the new Jedi Order books as a supplement??? It is fun to read it on my Kindle, but still the same it could have been added to several of the New Jedi Order series.............</td>
+            <td>2009-04-16</td>
+          </tr>
+          <tr>
+            <td>B000JMKNQ0</td>
+            <td>Two hours or more (65-100 pages)</td>
+            <td>4.0</td>
+            <td>7.99</td>
+            <td>good but to short</td>
+            <td>Tis is a good short story but I was hoping for more I'm not a big fan of the yuzan vong war series but this was good anyway more would have been better</td>
+            <td>2013-06-11</td>
+          </tr>
+          <tr>
+            <td>B000JMKNQ0</td>
+            <td>Two hours or more (65-100 pages)</td>
+            <td>5.0</td>
+            <td>7.99</td>
+            <td>my collection</td>
+            <td>I haven't gotten time to read this one yet. I intend to read it soon though. Looks like a good book.</td>
+            <td>2014-01-27</td>
+          </tr>
+          <tr>
+            <td>B000JMKXYW</td>
+            <td>Two hours or more (65-100 pages)</td>
+            <td>3.0</td>
+            <td>0.99</td>
+            <td>Captain Stormfield's Visit to Heaven</td>
+            <td>It was an OK read although at sixty seven I found it a bit juvenile, but i was pleased with the way it stretched my mind.</td>
+            <td>2013-09-18</td>
+          </tr>
+          <tr>
+            <td>B000JMKXYW</td>
+            <td>Two hours or more (65-100 pages)</td>
+            <td>5.0</td>
+            <td>0.99</td>
+            <td>A humorous piece of humble pie</td>
+            <td>Twain questions the common understanding of heaven with a satirical account of one man's trip to and experience in the afterlife.</td>
+            <td>2013-08-03</td>
+          </tr>
+          <tr>
+            <td>B000JMKXYW</td>
+            <td>Two hours or more (65-100 pages)</td>
+            <td>5.0</td>
+            <td>0.99</td>
+            <td>A Most Enjoyable Tale</td>
+            <td>Mark Twain is one of my favorite authors and as his other works put a smile on my face so did this one.  This tale gives us food for thought.  As always, a great classic!</td>
+            <td>2013-05-14</td>
+          </tr>
+          <tr>
+            <td>B000JMKXYW</td>
+            <td>Two hours or more (65-100 pages)</td>
+            <td>3.0</td>
+            <td>0.99</td>
+            <td>Captain Stormfield's Visit to Heaven</td>
+            <td>it was just okay.  I didn't dislike it, but I can live without it.  It wasn't a drama or adventure.  I don't know HOW I would classify it, but it wasn't that great.</td>
+            <td>2013-01-03</td>
+          </tr>
+          <tr>
+            <td>B000JMKXYW</td>
+            <td>Two hours or more (65-100 pages)</td>
+            <td>1.0</td>
+            <td>0.99</td>
+            <td>Twain will be okay</td>
+            <td>He doesn't need my recommendation but since you asked, unless you are into thorough reprobates, give it a miss.  As the wag once put it, Mark Twain shows promise.</td>
+            <td>2013-05-25</td>
+          </tr>
+          <tr>
+            <td>B000JMKXYW</td>
+            <td>Two hours or more (65-100 pages)</td>
+            <td>4.0</td>
+            <td>0.99</td>
+            <td>Good Mark Twain story</td>
+            <td>Didn't know if I would like this but it was very interesting and thought provoking, especially when you consider the time it was written. An easy enjoyable read.</td>
+            <td>2012-12-14</td>
+          </tr>
+          <tr>
+            <td>B000JMKXYW</td>
+            <td>Two hours or more (65-100 pages)</td>
+            <td>5.0</td>
+            <td>0.99</td>
+            <td>Twain is still the best</td>
+            <td>I am re-doing an on stage production of Mark Twain and his writings. This year I was going to bring out some of his more critical views on organized religion. Captain Stormfield was just the beginning of my very convenient Kindle research.</td>
+            <td>2013-12-29</td>
+          </tr>
+          <tr>
+            <td>B000JMKXYW</td>
+            <td>Two hours or more (65-100 pages)</td>
+            <td>5.0</td>
+            <td>0.99</td>
+            <td>Big Fan</td>
+            <td>I have been a fan of Mark Twain ever since I found we share a birthday. I am glad I found this story.</td>
+            <td>2013-12-30</td>
+          </tr>
+          <tr>
+            <td>B000JML2H4</td>
+            <td>30 minutes (12-21 pages)</td>
+            <td>3.0</td>
+            <td>3.99</td>
+            <td>I prefer free form prayer</td>
+            <td>I thought it would be sweet to share these with my son but all in all, they left me with a negative impression.  Some of the prayers have a looming undertone.</td>
+            <td>2012-11-28</td>
+          </tr>
+          <tr>
+            <td>B000JML2H4</td>
+            <td>30 minutes (12-21 pages)</td>
+            <td>4.0</td>
+            <td>3.99</td>
+            <td>prayer</td>
+            <td>lots of prayers, a little to old for my grandchildren. they are 2 and 3.  so we will just keep till they get into school.</td>
+            <td>2014-02-02</td>
+          </tr>
+          <tr>
+            <td>B000JML2H4</td>
+            <td>30 minutes (12-21 pages)</td>
+            <td>3.0</td>
+            <td>3.99</td>
+            <td>Not for me</td>
+            <td>I teach my children to pray to the Lord as if they are speaking to their best friend, open, honest, and in modern language. This had too many 'thy's and thou's' for me and my family, but others may find it helpful in their walk with God.</td>
+            <td>2012-03-01</td>
+          </tr>
+          <tr>
+            <td>B000JML2H4</td>
+            <td>30 minutes (12-21 pages)</td>
+            <td>5.0</td>
+            <td>3.99</td>
+            <td>Love it!</td>
+            <td>This book has many prayers that children should know.  With them on my kindle, I can easily teach them to our Sunday school class that we have just started.  I also enjoyed reading the prayers that were new to me.</td>
+            <td>2014-05-19</td>
+          </tr>
+          <tr>
+            <td>B000JML2H4</td>
+            <td>30 minutes (12-21 pages)</td>
+            <td>4.0</td>
+            <td>3.99</td>
+            <td>Little Folded Hands</td>
+            <td>Great beginning prayer book for children. Excellent way to teach them the habit of prayer. It can be used by all denominations and Christian faiths.</td>
+            <td>2014-05-09</td>
+          </tr>
+          <tr>
+            <td>B000JMLG4S</td>
+            <td>90 minutes (44-64 pages)</td>
+            <td>5.0</td>
+            <td>0.99</td>
+            <td>excellent.  Trying to tie the demonstrated will tie you in knots.</td>
+            <td>I would recommend if you are trying to tie knots. All of the common knots are in here and some more unusual.</td>
+            <td>2013-05-19</td>
+          </tr>
+          <tr>
+            <td>B000JMLG4S</td>
+            <td>90 minutes (44-64 pages)</td>
+            <td>5.0</td>
+            <td>0.99</td>
+            <td>Knots, Splices and Rope Work</td>
+            <td>Very nice reference.  Is helpful if you are looking to learn the best way to make knots and their different applications in real world situations.</td>
+            <td>2013-03-10</td>
+          </tr>
+          <tr>
+            <td>B000JMLHFG</td>
+            <td>90 minutes (44-64 pages)</td>
+            <td>4.0</td>
+            <td>9.99</td>
+            <td>OMG</td>
+            <td>Secret societies this is a book that you do not want to put down and reading reading it will blow your mind</td>
+            <td>2013-02-25</td>
+          </tr>
+          <tr>
+            <td>B000JMLHFG</td>
+            <td>90 minutes (44-64 pages)</td>
+            <td>4.0</td>
+            <td>9.99</td>
+            <td>Captivating</td>
+            <td>I came across this book accidentally after seeing a TV special on secret societies. Naturally, it is captivating and extremely interesting. I would recommend this to anyone who has an interest in things hidden right under their nose.</td>
+            <td>2013-09-20</td>
+          </tr>
+          <tr>
+            <td>B000JMLHFG</td>
+            <td>90 minutes (44-64 pages)</td>
+            <td>3.0</td>
+            <td>9.99</td>
+            <td>Book</td>
+            <td>I purchased this for my Kindle from Amazon and did not enjoy at all.  I would not recommend this unless you are desperate for something to read.</td>
+            <td>2012-03-01</td>
+          </tr>
+          <tr>
+            <td>B000JMLHFG</td>
+            <td>90 minutes (44-64 pages)</td>
+            <td>4.0</td>
+            <td>9.99</td>
+            <td>criminals in white collars</td>
+            <td>just goes to show how blind we Americans are when it comes to less than prefect society. Corruption in the best of places. I rated it a four for content, excellent presentation.</td>
+            <td>2013-10-22</td>
+          </tr>
+          <tr>
+            <td>B000JMLHFG</td>
+            <td>90 minutes (44-64 pages)</td>
+            <td>4.0</td>
+            <td>9.99</td>
+            <td>Steveatypical</td>
+            <td>If you think this is about secret societies and their origin do not get. But if you are a born again Christian then get so you see why these groups need to be approached with care.</td>
+            <td>2013-07-02</td>
+          </tr>
+          <tr>
+            <td>B000JMLHFG</td>
+            <td>90 minutes (44-64 pages)</td>
+            <td>5.0</td>
+            <td>9.99</td>
+            <td>Interesting read</td>
+            <td>For anyone who is interested in secret societies, this is definitely worth a read.  It is a very interesting read.</td>
+            <td>2013-06-05</td>
+          </tr>
+          <tr>
+            <td>B000JMLHFG</td>
+            <td>90 minutes (44-64 pages)</td>
+            <td>3.0</td>
+            <td>9.99</td>
+            <td>Too biased</td>
+            <td>This book did not let the reader form conclusions.My lure in buying this was for information on Secret Societies not  a slanted opinion.</td>
+            <td>2012-12-20</td>
+          </tr>
+          <tr>
+            <td>B000R93DJE</td>
+            <td>Two hours or more (65-100 pages)</td>
+            <td>3.0</td>
+            <td>3.03</td>
+            <td>Kinda Short</td>
+            <td>It was a cute book, but very short.  I have enjoyed the other Sophie Green mysteries much more than this one.  It was a little too light on substance for my tastes.</td>
+            <td>2011-02-06</td>
+          </tr>
+          <tr>
+            <td>B000UMZMME</td>
+            <td>Two hours or more (65-100 pages)</td>
+            <td>4.0</td>
+            <td>0.99</td>
+            <td>Good</td>
+            <td>Like this series. Found it simple but worth  the read. Glad the two of them ended up happy. Love this book .</td>
+            <td>2014-06-01</td>
+          </tr>
+          <tr>
+            <td>B000UMZMME</td>
+            <td>Two hours or more (65-100 pages)</td>
+            <td>5.0</td>
+            <td>0.99</td>
+            <td>Another hit</td>
+            <td>Mandy Roth does it again. As always this is a fantastic series of books. I love the characters and the storyline. Definitely a must read book for lovers of paranormal/shifter romance.</td>
+            <td>2014-01-17</td>
+          </tr>
+          <tr>
+            <td>B000UMZMME</td>
+            <td>Two hours or more (65-100 pages)</td>
+            <td>5.0</td>
+            <td>0.99</td>
+            <td>Wonderful read</td>
+            <td>Great series so far. The second book is as wonderful as the first. The caricatures are wonderfully funny and endearing. Definitely worth the read. These books are short but you really get to know the caricatures.</td>
+            <td>2014-05-30</td>
+          </tr>
+          <tr>
+            <td>B000UMZMME</td>
+            <td>Two hours or more (65-100 pages)</td>
+            <td>3.0</td>
+            <td>0.99</td>
+            <td>Oook so the story line itself is really good but way way to short it almost feels like ...</td>
+            <td>Oook so the story line itself is really good but way way to short it almost feels like it's fast forwarded and really rushed. Soo I hope the next installment is longer than this. I liked it just wish there were more meat to this one...</td>
+            <td>2014-07-09</td>
+          </tr>
+          <tr>
+            <td>B000UMZMME</td>
+            <td>Two hours or more (65-100 pages)</td>
+            <td>3.0</td>
+            <td>0.99</td>
+            <td>Too expensive for the 80 pages.  no book 70 page book is worth $2.66.</td>
+            <td>Too expensive for the 80 pages.  no book 70 page book is worth $2.66.  the author should make longer book, you can't develop a good story with just a couple of chapters.</td>
+            <td>2013-12-10</td>
+          </tr>
+          <tr>
+            <td>B000XZKZKM</td>
+            <td>Two hours or more (65-100 pages)</td>
+            <td>5.0</td>
+            <td>0.99</td>
+            <td>LUV IT, LUV IT!!!</td>
+            <td>Rafe and Emma forever, I luved this book so much and wish i could read more of those two. Sad that book was too short, but i guess oh well!!! Was happy that it was the best ever after for the both of them!!!</td>
+            <td>2011-08-01</td>
+          </tr>
+          <tr>
+            <td>B000XZKZKM</td>
+            <td>Two hours or more (65-100 pages)</td>
+            <td>5.0</td>
+            <td>0.99</td>
+            <td>Branded</td>
+            <td>I love the Leather and Lace series. They are really well written stories with depth to them. You can feel the love between the characters which make the romance very believable. Branded is yet another victory. Thumbs up and highly recommended.</td>
+            <td>2013-07-01</td>
+          </tr>
+          <tr>
+            <td>B0012JLKJI</td>
+            <td>15 minutes (1-11 pages)</td>
+            <td>3.0</td>
+            <td>0.99</td>
+            <td>Are we alone?</td>
+            <td>I doubt we are, but this little booklet is not convincing.  That said, it is interesting.  It does  put forth speculation why Governments may not choose to share possible knowledge.</td>
+            <td>2013-11-19</td>
+          </tr>
+          <tr>
+            <td>B0012JLKJI</td>
+            <td>15 minutes (1-11 pages)</td>
+            <td>1.0</td>
+            <td>0.99</td>
+            <td>Really, didnt find it that interesting</td>
+            <td>Barely worth  the money, hard to stay interested.. not well written I would wait till its free or you can burrow with prime</td>
+            <td>2014-06-03</td>
+          </tr>
+          <tr>
+            <td>B0012JLKJI</td>
+            <td>15 minutes (1-11 pages)</td>
+            <td>3.0</td>
+            <td>0.99</td>
+            <td>Something to read</td>
+            <td>This book is a lot like most of the ET books and articles I have read in the past and a lot of the info has already been hashed over.</td>
+            <td>2014-05-13</td>
+          </tr>
+          <tr>
+            <td>B0012JQZN4</td>
+            <td>30 minutes (12-21 pages)</td>
+            <td>5.0</td>
+            <td>10.99</td>
+            <td>A great intro to shamanism and Margaret Atwood's "Surfacing"</td>
+            <td>I was entranced with the way this author brought together Margaret Atwood's &#34;Surfacing&#34; and shamanism. This book helped me to understand shamanism a little more and prompted me to add Surfacing to my reading list.</td>
+            <td>2014-05-07</td>
+          </tr>
+          <tr>
+            <td>B0012JQZN4</td>
+            <td>30 minutes (12-21 pages)</td>
+            <td>5.0</td>
+            <td>10.99</td>
+            <td>An entertaining read.</td>
+            <td>Very cool.</td>
+            <td>2014-07-05</td>
+          </tr>
+          <tr>
+            <td>B0015SY0JI</td>
+            <td>45 minutes (22-32 pages)</td>
+            <td>3.0</td>
+            <td>0.0</td>
+            <td>So so</td>
+            <td>It's a quick read, but hardly a classic short story.  I got it for free.  I'd be ticked off if I'd have paid for it.</td>
+            <td>2013-10-29</td>
+          </tr>
+          <tr>
+            <td>B0015SY0JI</td>
+            <td>45 minutes (22-32 pages)</td>
+            <td>4.0</td>
+            <td>0.0</td>
+            <td>Great read of older type sci-fi</td>
+            <td>Herbert has a gift of setting scene and making people real nice story and a very quick read. had to find it.</td>
+            <td>2014-01-06</td>
+          </tr>
+          <tr>
+            <td>B0015SY0JI</td>
+            <td>45 minutes (22-32 pages)</td>
+            <td>4.0</td>
+            <td>0.0</td>
+            <td>Great early space opera</td>
+            <td>This is a fun example of the timewhen writers were paid by the word and quantity was a living.</td>
+            <td>2013-11-21</td>
+          </tr>
+          <tr>
+            <td>B0015SY0JI</td>
+            <td>45 minutes (22-32 pages)</td>
+            <td>5.0</td>
+            <td>0.0</td>
+            <td>Another great Frank Herbert short Sci-Fi story</td>
+            <td>The protagonist in this story is a very clever fellow indeed. Only Frank Herbert writes such cerebral short stories.I recommend this short story.</td>
+            <td>2012-07-23</td>
+          </tr>
+          <tr>
+            <td>B00164WE1W</td>
+            <td>90 minutes (44-64 pages)</td>
+            <td>2.0</td>
+            <td>2.99</td>
+            <td>Not worth reading.</td>
+            <td>a very basic love story that is so boring and not believable.can't believe jane wrote this.disaapointing and not her best</td>
+            <td>2014-02-02</td>
+          </tr>
+          <tr>
+            <td>B00164WE1W</td>
+            <td>90 minutes (44-64 pages)</td>
+            <td>5.0</td>
+            <td>2.99</td>
+            <td>Easy to read</td>
+            <td>Loved this story. I read it in less than 2 hours and I just love mini novel like this one. Jane Porter writes in a easy to read way that simply sweeps the reader in and immediately let you be a part of the story.</td>
+            <td>2012-12-27</td>
+          </tr>
+          <tr>
+            <td>B00164WE1W</td>
+            <td>90 minutes (44-64 pages)</td>
+            <td>5.0</td>
+            <td>2.99</td>
+            <td>a Great quick read!</td>
+            <td>This story was a great quick read...it has misunderstanding and romance. When things come to light for our hero, he knows what a giant mistake he has made! Which makes the groveling even better! Loved it!!</td>
+            <td>2013-01-02</td>
+          </tr>
+          <tr>
+            <td>B0017HNV1U</td>
+            <td>90 minutes (44-64 pages)</td>
+            <td>4.0</td>
+            <td>2.99</td>
+            <td>Ancient Wisdom</td>
+            <td>Fascinating look at laws.  I have been curious about these rules.  Enjoyed the insight into ancient society.  Regulations have long been the bane of our existence!</td>
+            <td>2013-03-10</td>
+          </tr>
+          <tr>
+            <td>B0017HNV1U</td>
+            <td>90 minutes (44-64 pages)</td>
+            <td>4.0</td>
+            <td>2.99</td>
+            <td>Wow!</td>
+            <td>Imagine if these laws were in place? But unless people are held to the laws, by accountability, it has no more worth than the paper it is on.</td>
+            <td>2013-08-01</td>
+          </tr>
+          <tr>
+            <td>B0017HNV1U</td>
+            <td>90 minutes (44-64 pages)</td>
+            <td>1.0</td>
+            <td>2.99</td>
+            <td>Very dry and boring</td>
+            <td>This book nearly put me to sleep.  I love learning about laws of other cultures and the forerunner of our current system of laws but it was very dry.</td>
+            <td>2013-03-14</td>
+          </tr>
+          <tr>
+            <td>B0017HNV1U</td>
+            <td>90 minutes (44-64 pages)</td>
+            <td>5.0</td>
+            <td>2.99</td>
+            <td>still pertinent</td>
+            <td>I chose 5 stars because it's readable and very thorough.  Interesting that crimes don't change much, just the consequences.  The hammurabi code certainly decreased crimes rates permanently.  Something to think about.</td>
+            <td>2013-08-21</td>
+          </tr>
+          <tr>
+            <td>B001892EI8</td>
+            <td>90 minutes (44-64 pages)</td>
+            <td>3.0</td>
+            <td>1.99</td>
+            <td>An Okay read!</td>
+            <td>I wouldn't call it original. I have read several books with similarities. However, it was a okay read. It didn't put me to sleep.</td>
+            <td>2012-09-07</td>
+          </tr>
+          <tr>
+            <td>B001892EI8</td>
+            <td>90 minutes (44-64 pages)</td>
+            <td>5.0</td>
+            <td>1.99</td>
+            <td>I love this book</td>
+            <td>I love mystery baby books where the daddy did not know and this is one of them.  Enjoyed this book!</td>
+            <td>2013-01-24</td>
+          </tr>
+          <tr>
+            <td>B001892EI8</td>
+            <td>90 minutes (44-64 pages)</td>
+            <td>3.0</td>
+            <td>1.99</td>
+            <td>Additionally</td>
+            <td>This could have been so much more good story line way to short. Characters  just didn't have enough time quick read thanks for low price</td>
+            <td>2014-02-04</td>
+          </tr>
+          <tr>
+            <td>B001892EI8</td>
+            <td>90 minutes (44-64 pages)</td>
+            <td>5.0</td>
+            <td>1.99</td>
+            <td>Great love story between two people</td>
+            <td>This story is great for reading and it shows that love between two people no matter how long it takes .</td>
+            <td>2014-05-24</td>
+          </tr>
+          <tr>
+            <td>B001892EI8</td>
+            <td>90 minutes (44-64 pages)</td>
+            <td>5.0</td>
+            <td>1.99</td>
+            <td>Nice feel good read</td>
+            <td>Liked the preview enough that I bought the book.  I will let you know what I thought when I finish.  Just finished the book and can say I definitely enjoyed it.  Keep them coming.</td>
+            <td>2012-11-24</td>
+          </tr>
+          <tr>
+            <td>B001892EI8</td>
+            <td>90 minutes (44-64 pages)</td>
+            <td>5.0</td>
+            <td>1.99</td>
+            <td>The billionaires baby</td>
+            <td>This was a very good book. I know it was a mini book  but it should have been so much longer. I loved it.</td>
+            <td>2013-01-02</td>
+          </tr>
+          <tr>
+            <td>B001892EI8</td>
+            <td>90 minutes (44-64 pages)</td>
+            <td>4.0</td>
+            <td>1.99</td>
+            <td>Good read</td>
+            <td>This book was a good read, and I would recommend it to anyone to read. I liked this book and am going to have to go back and start at book #1!!</td>
+            <td>2012-10-26</td>
+          </tr>
+          <tr>
+            <td>B001892EI8</td>
+            <td>90 minutes (44-64 pages)</td>
+            <td>5.0</td>
+            <td>1.99</td>
+            <td>Loved it!</td>
+            <td>Not too short, not too long, just the perfect amount of pages for a train ride to work.  Loved the characters.</td>
+            <td>2011-06-22</td>
+          </tr>
+          <tr>
+            <td>B001892EI8</td>
+            <td>90 minutes (44-64 pages)</td>
+            <td>5.0</td>
+            <td>1.99</td>
+            <td>Billionaire's Baby</td>
+            <td>Well nice reading and sexy Plan to read the rest later this year sexy I loved the plot and the billionaire of course</td>
+            <td>2013-02-26</td>
+          </tr>
+          <tr>
+            <td>B001892EI8</td>
+            <td>90 minutes (44-64 pages)</td>
+            <td>5.0</td>
+            <td>1.99</td>
+            <td>A quick read</td>
+            <td>This was a quick read but a fun story. I enjoyed the characters and the simple story line. It was a perfect book for vacation.</td>
+            <td>2014-05-26</td>
+          </tr>
+          <tr>
+            <td>B001892EI8</td>
+            <td>90 minutes (44-64 pages)</td>
+            <td>5.0</td>
+            <td>1.99</td>
+            <td>Great Book</td>
+            <td>Loved it could not put it down read this book in two days. I loved it Its a must read</td>
+            <td>2013-01-12</td>
+          </tr>
+          <tr>
+            <td>B001892EI8</td>
+            <td>90 minutes (44-64 pages)</td>
+            <td>4.0</td>
+            <td>1.99</td>
+            <td>Good read</td>
+            <td>I enjoyed the story line and the way it was written. I like Haley's character as a strong independent woman who didn't fall to prices when Garrett didn't call her and she found out she was pregnant.</td>
+            <td>2013-02-24</td>
+          </tr>
+          <tr>
+            <td>B001892EI8</td>
+            <td>90 minutes (44-64 pages)</td>
+            <td>5.0</td>
+            <td>1.99</td>
+            <td>A Great short story!</td>
+            <td>If your looking for a great short story, then this is the one for you.  It is well written and has a good story line.</td>
+            <td>2014-05-31</td>
+          </tr>
+          <tr>
+            <td>B001892EI8</td>
+            <td>90 minutes (44-64 pages)</td>
+            <td>5.0</td>
+            <td>1.99</td>
+            <td>Awesome</td>
+            <td>I thought this book was great and I recommend to all.  I like everything about it.  Good book to read.</td>
+            <td>2014-03-18</td>
+          </tr>
+          <tr>
+            <td>B001892EI8</td>
+            <td>90 minutes (44-64 pages)</td>
+            <td>5.0</td>
+            <td>1.99</td>
+            <td>very good</td>
+            <td>Leanne Banks is a very good author. I can not wait to read more of her books.  Two thumbs up</td>
+            <td>2013-03-05</td>
+          </tr>
+          <tr>
+            <td>B001892EI8</td>
+            <td>90 minutes (44-64 pages)</td>
+            <td>5.0</td>
+            <td>1.99</td>
+            <td>chickenpox</td>
+            <td>Garret and Haley were funny. I wished it was longer and more in depth. Leanne is a great writer, I will be reading more of her books</td>
+            <td>2013-11-06</td>
+          </tr>
+          <tr>
+            <td>B001892EI8</td>
+            <td>90 minutes (44-64 pages)</td>
+            <td>3.0</td>
+            <td>1.99</td>
+            <td>Cute</td>
+            <td>Book was cute but did not realize it was a mini story.  Wish there has been more content to the story line. Gave it a 3 star</td>
+            <td>2013-05-31</td>
+          </tr>
+          <tr>
+            <td>B001892EI8</td>
+            <td>90 minutes (44-64 pages)</td>
+            <td>5.0</td>
+            <td>1.99</td>
+            <td>Loved</td>
+            <td>This book was short but sweet I like all of  Leanne banks books. I'm trying to read all of her billionaire series</td>
+            <td>2013-09-01</td>
+          </tr>
+          <tr>
+            <td>B001892EI8</td>
+            <td>90 minutes (44-64 pages)</td>
+            <td>5.0</td>
+            <td>1.99</td>
+            <td>good book</td>
+            <td>I read this book. It made me lauch and the characters and the story is really captivating and cool, i am still laughing.</td>
+            <td>2013-04-05</td>
+          </tr>
+          <tr>
+            <td>B001892EI8</td>
+            <td>90 minutes (44-64 pages)</td>
+            <td>3.0</td>
+            <td>1.99</td>
+            <td>Short and sweet</td>
+            <td>A quick enjoyable read.  I would have liked more details,  but I am a fan of big fat book filled with character development.</td>
+            <td>2013-03-01</td>
+          </tr>
+          <tr>
+            <td>B001892EI8</td>
+            <td>90 minutes (44-64 pages)</td>
+            <td>5.0</td>
+            <td>1.99</td>
+            <td>I really liked this book.</td>
+            <td>I really liked the story in this book.  I could not put it down till the very end of the story.Thank you so very much for writing this great story.</td>
+            <td>2013-03-18</td>
+          </tr>
+          <tr>
+            <td>B001892EI8</td>
+            <td>90 minutes (44-64 pages)</td>
+            <td>5.0</td>
+            <td>1.99</td>
+            <td>II Liked It</td>
+            <td>Book moved rapidly. Ending was predictiblebut I really liked. The writer held your interest all the way through. Would recommend it</td>
+            <td>2013-04-04</td>
+          </tr>
+          <tr>
+            <td>B001892EI8</td>
+            <td>90 minutes (44-64 pages)</td>
+            <td>3.0</td>
+            <td>1.99</td>
+            <td>The Billionaire's Baby (Harlequin Mini # 19)</td>
+            <td>In this book spring break results in an unexpected pregnancy and an unexpected heart attack.  There are many interesting twists and turns to the plot which leads to a happy ending.</td>
+            <td>2013-07-13</td>
+          </tr>
+          <tr>
+            <td>B001892EI8</td>
+            <td>90 minutes (44-64 pages)</td>
+            <td>3.0</td>
+            <td>1.99</td>
+            <td>Cute story but very short!</td>
+            <td>Good story line but very short. The story is rushed and that makes it a bit superficial. But a better deal than the expensive stories were you only get half the story and have to wait months to get the next follow up.</td>
+            <td>2013-03-03</td>
+          </tr>
+          <tr>
+            <td>B001892EI8</td>
+            <td>90 minutes (44-64 pages)</td>
+            <td>4.0</td>
+            <td>1.99</td>
+            <td>A easy read</td>
+            <td>A very touching love story, not a lot if characters to remember. Simple, but strong story line.  Recommend for someone who wants a short love story to read.</td>
+            <td>2013-02-18</td>
+          </tr>
+          <tr>
+            <td>B001892EI8</td>
+            <td>90 minutes (44-64 pages)</td>
+            <td>5.0</td>
+            <td>1.99</td>
+            <td>Short and sweet</td>
+            <td>Wonderful story. Short but sweet. It is so nice how they meet again. A small lie of ones name can mean something big to someone. A good read even if it was too short.</td>
+            <td>2013-08-31</td>
+          </tr>
+          <tr>
+            <td>B001892EI8</td>
+            <td>90 minutes (44-64 pages)</td>
+            <td>4.0</td>
+            <td>1.99</td>
+            <td>Good book</td>
+            <td>I loved this and babies are always, in most cases, the result of true love and family.  I love happy ending</td>
+            <td>2013-05-26</td>
+          </tr>
+          <tr>
+            <td>B001892EI8</td>
+            <td>90 minutes (44-64 pages)</td>
+            <td>5.0</td>
+            <td>1.99</td>
+            <td>I love it</td>
+            <td>I really enjoyed this book short, romantic & good soul book! it really is, a feel good book! you'll enjoy this book</td>
+            <td>2013-05-15</td>
+          </tr>
+          <tr>
+            <td>B001892EI8</td>
+            <td>90 minutes (44-64 pages)</td>
+            <td>3.0</td>
+            <td>1.99</td>
+            <td>sweet short story</td>
+            <td>I really did enjoy reading this story. It's the kind of book that makes your heart flutter. My only complaint is that it's so short. It would be a great start to a novel.</td>
+            <td>2013-02-25</td>
+          </tr>
+          <tr>
+            <td>B001892EI8</td>
+            <td>90 minutes (44-64 pages)</td>
+            <td>3.0</td>
+            <td>1.99</td>
+            <td>ok read</td>
+            <td>it was a ok read but very predictable and a little on the short side.  i like long books that give me hours of escape</td>
+            <td>2013-01-31</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </main>
+  </div>
+</div>
+
+<!-- Bootstrap core JavaScript -->
+<script src="/js/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+<script src="/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+<script src="/js/bootstrap.min.js"></script>
+<!-- Page level plugin JavaScript-->
+<script src="/js/datatables/jquery.dataTables.js"></script>
+<script src="/js/datatables/dataTables.bootstrap4.js"></script>
+<!-- Custom scripts for this page-->
+<script src="/js/sb-admin-datatables.min.js"></script>
+
+
+</body></html>
