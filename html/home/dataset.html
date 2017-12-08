@@ -76,14 +76,145 @@
         <li class="nav-item" style="font-size: medium;">
           <a class="nav-link" href="#">Download Source</a>
         </li>
+        <li class="nav-item" style="font-size: medium;">
+          <a class="nav-link" href="mailto:xiangzhe.meng@epfl.ch">Contact us</a>
+        </li>
       </ul>
     </nav>
 
     <!-- Main container -->
     <main class="col-sm-9 offset-sm-3 col-md-10 offset-md-2 pt-3">
+      <div class="card">
+        <div class="card-header">
+            <span class="display-4" style="font-size: 20px">Data description</span>
+        </div>
+        <div class="card-block">
+            <p style="font-size: 16px;">
+                &emsp;&emsp;
+                Data description
+            </p>
+        </div>
+      </div>
 
-      <!-- Amazon Reviews Dataset Structure-->
-      <h2>Amazon Reviews Dataset</h2>
+      <br>
+
+      <div class="row">
+        <!-- Metadata -->
+        <div class="col-lg-6">
+          <div class="card mb-3 h-100">
+            <div class="card-header display-4" style="font-size: 15px">Metadata</div>
+            <div class="card-body">
+                <br><br>
+                <table class="table table-hover">
+                    <tbody>
+                        <tr class="table-success">
+                            <td class="font-weight-bold">Asin</td>
+                            <td>ID of the product</td>
+                        </tr>
+                        <tr>
+                            <td class="font-weight-bold">Title</td>
+                            <td>Name of the product</td>
+                        </tr>
+                        <tr class="table-info">
+                            <td class="font-weight-bold">Price</td>
+                            <td>Price in US dollars</td>
+                        </tr>
+                        <tr>
+                            <td class="font-weight-bold">imUrl</td>
+                            <td>URL of the product image</td>
+                        </tr>
+                        <tr class="table-warning">
+                            <td class="font-weight-bold">Related</td>
+                            <td>Related products (also bought, also viewed, bought together, buy after viewing)</td>
+                        </tr>
+                        <tr>
+                            <td class="font-weight-bold">SalesRank</td>
+                            <td>Sales rank information</td>
+                        </tr>
+                        <tr class="table-danger">
+                            <td class="font-weight-bold">Brand</td>
+                            <td>Brand name</td>
+                        </tr>
+                        <tr>
+                            <td class="font-weight-bold">Categories</td>
+                            <td>List of categories the product belongs to</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review -->
+        <div class="col-lg-6">
+          <div class="card mb-3 h-100">
+            <div class="card-header display-4" style="font-size: 15px">Review</div>
+            <div class="card-body">
+                <br>
+                <table class="table table-hover" >
+                    <tbody>
+                    <tr class="table-success">
+                        <td class="font-weight-bold">Asin</td>
+                        <td>ID of the product</td>
+                    </tr>
+                    <tr>
+                        <td class="font-weight-bold">Title</td>
+                        <td>Name of the product</td>
+                    </tr>
+                    <tr class="table-info">
+                        <td class="font-weight-bold">Price</td>
+                        <td>Price in US dollars</td>
+                    </tr>
+                    <tr>
+                        <td class="font-weight-bold">imUrl</td>
+                        <td>URL of the product image</td>
+                    </tr>
+                    <tr class="table-warning">
+                        <td class="font-weight-bold">Related</td>
+                        <td>Related products (also bought, also viewed, bought together, buy after viewing)</td>
+                    </tr>
+                    <tr>
+                        <td class="font-weight-bold">SalesRank</td>
+                        <td>Sales rank information</td>
+                    </tr>
+                    <tr class="table-danger">
+                        <td class="font-weight-bold">Brand</td>
+                        <td>Brand name</td>
+                    </tr>
+                    <tr>
+                        <td class="font-weight-bold">Categories</td>
+                        <td>List of categories the product belongs to</td>
+                    </tr>
+                    <tr class="table-active">
+                        <td class="font-weight-bold">Brand</td>
+                        <td>Brand name</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <br>
+
+      <div class="card">
+        <div class="card-header">
+            <span class="display-4" style="font-size: 20px">Data cleaning and wrangling</span>
+        </div>
+        <div class="card-block">
+            <p style="font-size: 16px;">
+                &emsp;&emsp;
+                Data cleaning
+            </p>
+        </div>
+      </div>
+
+      <br>
+
+
+        <!-- Amazon Reviews Dataset Structure-->
+      <h1 class="display-4" style="font-size: 25px">Amazon Reviews Dataset Example</h1>
       <div class="table-responsive">
         <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
           <thead>
@@ -875,6 +1006,7 @@
           </tbody>
         </table>
       </div>
+      <div class="row"><br><br><br></div>
     </main>
   </div>
 </div>

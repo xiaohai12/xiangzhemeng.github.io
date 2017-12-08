@@ -1,158 +1,187 @@
 <!DOCTYPE html>
 <html lang="en" class="gr__v4-alpha_getbootstrap_com">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
-  <link rel="icon" href="/img/ada_logo.png">
-  <title>Reviews are KING</title>
-  <!-- Bootstrap core CSS -->
-  <link href="/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Custom styles for this website -->
-  <link href="/css/dashboard.css" rel="stylesheet">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="/img/ada_logo.png">
+    <title>Reviews are KING</title>
+    <!-- Bootstrap core CSS -->
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom styles for this website -->
+    <link href="/css/dashboard.css" rel="stylesheet">
+    <!-- Page level plugin CSS-->
+    <link href="/css/dataTables.bootstrap4.css" rel="stylesheet">
+    <!-- Custom styles for this template-->
+    <link href="/css/sb-admin.css" rel="stylesheet">
 </head>
 
 <body>
 <nav class="navbar navbar-toggleable-md navbar-inverse fixed-top bg-primary">
-  <button class="navbar-toggler navbar-toggler-right hidden-lg-up" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <a class="navbar-brand" href="/index.html"><img src="/img/ada_logo.png" height="35" width="35"></a>
+    <button class="navbar-toggler navbar-toggler-right hidden-lg-up" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" href="/index.html"><img src="/img/ada_logo.png" height="35" width="35"></a>
 
-  <!-- Header -->
-  <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active" style="font-size: larger;">
-        <a class="nav-link" href="/index.html">Home <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item" style="font-size: larger;">
-        <a class="nav-link" href="/html/book/book_general_analysis.html">Kindle Book Store</a>
-      </li>
-      <li class="nav-item" style="font-size: larger;">
-        <a class="nav-link" href="/html/shortread/shortread_general_analysis.html">Kindle Short Read</a>
-      </li>
-    </ul>
-  </div>
-  <span class="navbar-brand">Amazon Reviews Data Analysis</span>
-  <img src="/img/amazon_logo.png" height="20" width="70">
+    <!-- Header -->
+    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active" style="font-size: larger;">
+                <a class="nav-link" href="/index.html">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item" style="font-size: larger;">
+                <a class="nav-link" href="/html/book/book_general_analysis.html">Kindle Book Store</a>
+            </li>
+            <li class="nav-item" style="font-size: larger;">
+                <a class="nav-link" href="/html/shortread/shortread_general_analysis.html">Kindle Short Read</a>
+            </li>
+        </ul>
+    </div>
+    <span class="navbar-brand">Amazon Reviews Data Analysis</span>
+    <img src="/img/amazon_logo.png" height="20" width="70">
 </nav>
 
 <!-- footer -->
 <nav class="navbar navbar-toggleable-md fixed-bottom navbar-light bg-faded">
-  <img class="navbar-brand" src="/img/epfl_logo.png" height="35" width="60">
-  <span class="navbar-brand" style="color: #636c72; font-size: medium;">2017 EPFL Applied Data Analysis Course</span>
-  <div class="collapse navbar-collapse"></div>
-  <span class="navbar-brand" style="color: #636c72; font-size: medium;">©Copyright 2017/2018</span>
+    <img class="navbar-brand" src="/img/epfl_logo.png" height="35" width="60">
+    <span class="navbar-brand" style="color: #636c72; font-size: medium;">2017 EPFL Applied Data Analysis Course</span>
+    <div class="collapse navbar-collapse"></div>
+    <span class="navbar-brand" style="color: #636c72; font-size: medium;">©Copyright 2017/2018</span>
 </nav>
 
 <!-- Menu -->
 <div class="container-fluid">
-  <div class="row">
-    <nav class="col-sm-3 col-md-2 hidden-xs-down bg-faded sidebar">
-      <div class="row">
-        <img class="offset-md-3 nav nav-pills flex-column" src="/img/ada_logo.png" height=20% width=50%>
-      </div>
-      <ul class="nav nav-pills flex-column">
-        <li class="nav-item" style="font-size: larger;">
-          <a class="nav-link" href="/index.html">About Project</a>
-        </li>
-        <li class="nav-item" style="font-size: larger;">
-          <a class="nav-link" href="dataset.html">About Data</a>
-        </li>
-        <li class="nav-item" style="font-size: larger;">
-          <a class="nav-link active" href="group.html">About Us<span class="sr-only">(current)</span></a>
-        </li>
-      </ul>
+    <div class="row">
+        <nav class="col-sm-3 col-md-2 hidden-xs-down bg-faded sidebar">
+            <div class="row">
+                <img class="offset-md-3 nav nav-pills flex-column" src="/img/ada_logo.png" height=20% width=50%>
+            </div>
+            <ul class="nav nav-pills flex-column">
+                <li class="nav-item" style="font-size: larger;">
+                    <a class="nav-link" href="/index.html">About Project</a>
+                </li>
+                <li class="nav-item" style="font-size: larger;">
+                    <a class="nav-link" href="dataset.html">About Data</a>
+                </li>
+                <li class="nav-item" style="font-size: larger;">
+                    <a class="nav-link active" href="group.html">About Us<span class="sr-only">(current)</span></a>
+                </li>
+            </ul>
 
-      <ul class="nav nav-pills flex-column tooltip-bottom card-footer">
-        <li class="nav-item" style="font-size: medium;">
-          <a class="nav-link" href="https://github.com/xiangzhemeng/epfl-ada2017-homework-project/tree/master/Project">Github</a>
-        </li>
-        <li class="nav-item" style="font-size: medium;">
-          <a class="nav-link" href="#">Download Source</a>
-        </li>
-      </ul>
-    </nav>
+            <ul class="nav nav-pills flex-column tooltip-bottom card-footer">
+                <li class="nav-item" style="font-size: medium;">
+                  <a class="nav-link" href="https://github.com/xiangzhemeng/epfl-ada2017-homework-project/tree/master/Project">Github</a>
+                </li>
+                <li class="nav-item" style="font-size: medium;">
+                  <a class="nav-link" href="#">Download Source</a>
+                </li>
+                <li class="nav-item" style="font-size: medium;">
+                    <a class="nav-link" href="mailto:xiangzhe.meng@epfl.ch">Contact us</a>
+                </li>
+            </ul>
+        </nav>
 
     <!-- Main container -->
     <main class="col-sm-9 offset-sm-3 col-md-10 offset-md-2 pt-3">
       <div class="card">
         <div class="card-header">
-          <h3>This is us.</h3>
+            <span class="display-4" style="font-size: 20px">Technology</span>
         </div>
-        <div class="card-body">
-          <p class="card-text">   HELLO ADA</p>
+        <div class="card-block">
+            <p style="font-size: 16px;">
+                &emsp;&emsp;
+                Hello
+            </p>
+        </div>
+      </div>
+
+      <br>
+      <div class="card">
+        <div class="card-block">
+            <p class="text-center">
+                <img src="/img/jupyter_python_numpy_logo.png" height=10% width=25%>
+                <img src="/img/pandas_logo.png" height=10% width=25%>
+                &emsp;
+                <img src="/img/scikit_logo.png" height=5% width=10%>
+                &emsp;
+                <img src="/img/mat.svg" height=10% width=20%>
+                &emsp;
+                <img src="/img/plotly_logo.png" height=8% width=8%>
+            </p>
         </div>
       </div>
 
       <br>
 
       <div class="card">
-        <div class="card-body">
-          <section class="row text-center">
-            <div class="col-md-4">
-              <img src="/img/mail_logo.png" height="100" width="100">
-              <h5>Shengzhao LEI</h5>
-              <p>
-                <a class="btn btn-secondary btn-sm" href="#">
-                  <img src="/img/linkedin_logo.jpg" height="25" width="25">
-                </a>
-                <a class="btn btn-secondary btn-sm" href="https://github.com/xiaohai12">
-                  <img src="/img/github_logo.png" height="25" width="25">
-                </a>
-                <a class="btn btn-secondary btn-sm" href="mailto:shengzhao.lei@epfl.ch">
-                  <img src="/img/mail_logo.png" height="25" width="25">
-                </a>
-              </p>
-            </div>
+        <div class="card-header">
+          <span class="display-4" style="font-size: 20px">About Us</span>
+        </div>
+        <div class="card-block">
+            <p style="font-size: 16px;">
+                &emsp;&emsp;
+                We are three graduate students studying at École Polytechnique Fédérale de Lausanne (EPFL). If you want to know more about us, you can find more information with the following links:
+            </p>
+            <section class="row text-center">
+                <div class="col-md-4">
+                    <img src="/img/mail_logo.png" height="100" width="100">
+                    <h5>Shengzhao LEI</h5>
+                    <p>
+                        <a class="btn btn-secondary btn-sm" href="#">
+                            <img src="/img/linkedin_logo.jpg" height="25" width="25">
+                        </a>
+                        <a class="btn btn-secondary btn-sm" href="https://github.com/xiaohai12">
+                            <img src="/img/github_logo.png" height="25" width="25">
+                        </a>
+                        <a class="btn btn-secondary btn-sm" href="mailto:shengzhao.lei@epfl.ch">
+                            <img src="/img/mail_logo.png" height="25" width="25">
+                        </a>
+                    </p>
+                </div>
 
-            <div class="col-md-4">
-              <img src="/img/mail_logo.png" height="100" width="100">
-              <h5>Tao SUN</h5>
-              <p>
-                <a class="btn btn-secondary btn-sm" href="#">
-                  <img src="/img/linkedin_logo.jpg" height="25" width="25">
-                </a>
-                <a class="btn btn-secondary btn-sm" href="https://github.com/TaoSunVoyage">
-                  <img src="/img/github_logo.png" height="25" width="25">
-                </a>
-                <a class="btn btn-secondary btn-sm" href="mailto:tao.sun@epfl.ch">
-                  <img src="/img/mail_logo.png" height="25" width="25">
-                </a>
-              </p>
-            </div>
+                <div class="col-md-4">
+                    <img src="/img/mail_logo.png" height="100" width="100">
+                    <h5>Tao SUN</h5>
+                    <p>
+                        <a class="btn btn-secondary btn-sm" href="#">
+                            <img src="/img/linkedin_logo.jpg" height="25" width="25">
+                        </a>
+                        <a class="btn btn-secondary btn-sm" href="https://github.com/TaoSunVoyage">
+                            <img src="/img/github_logo.png" height="25" width="25">
+                        </a>
+                        <a class="btn btn-secondary btn-sm" href="mailto:tao.sun@epfl.ch">
+                            <img src="/img/mail_logo.png" height="25" width="25">
+                        </a>
+                    </p>
+                </div>
 
-            <div class="col-md-4">
-              <img src="/img/mail_logo.png" height="100" width="100">
-              <h5>Xiangzhe MENG</h5>
-              <p>
-                <a class="btn btn-secondary btn-sm" href="http://www.linkedin.com/in/xiangzhe-meng">
-                  <img src="/img/linkedin_logo.jpg" height="25" width="25">
-                </a>
-                <a class="btn btn-secondary btn-sm" href="https://github.com/xiangzhemeng">
-                  <img src="/img/github_logo.png" height="25" width="25">
-                </a>
-                <a class="btn btn-secondary btn-sm" href="mailto:xiangzhe.meng@epfl.ch">
-                  <img src="/img/mail_logo.png" height="25" width="25">
-                </a>
-              </p>
-            </div>
-          </section>
+                <div class="col-md-4">
+                    <img src="/img/mail_logo.png" height="100" width="100">
+                    <h5>Xiangzhe MENG</h5>
+                    <p>
+                        <a class="btn btn-secondary btn-sm" href="http://www.linkedin.com/in/xiangzhe-meng">
+                            <img src="/img/linkedin_logo.jpg" height="25" width="25">
+                        </a>
+                        <a class="btn btn-secondary btn-sm" href="https://github.com/xiangzhemeng">
+                            <img src="/img/github_logo.png" height="25" width="25">
+                        </a>
+                        <a class="btn btn-secondary btn-sm" href="mailto:xiangzhe.meng@epfl.ch">
+                            <img src="/img/mail_logo.png" height="25" width="25">
+                        </a>
+                    </p>
+                </div>
+            </section>
         </div>
       </div>
-
-
-
+      <div class="row"><br><br><br></div>
     </main>
-  </div>
+    </div>
 </div>
 
 <!-- Bootstrap core JavaScript -->
-<!-- Placed at the end of the document so the pages load faster -->
 <script src="/js/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
 <script src="/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
 <script src="/js/bootstrap.min.js"></script>
 
-</section>
 </body></html>
