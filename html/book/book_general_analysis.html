@@ -82,80 +82,48 @@
         <!-- Main container -->
         <main class="col-sm-9 offset-sm-3 col-md-10 offset-md-2 pt-3">
             <h1 class="text-center" style="font-size: 30px">General Analysis about Rating Score and Review</h1>
-            <div class="card">
-                <div class="card-header">
-                    <span class="display-4" style="font-size: 18px">Average rating socre for each category</span>
-                </div>
-                <div class="card-block">
-                    <p style="font-size: 16px;">
-                        &emsp;&emsp;
-                    </p>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-block">
-                    <div class="embed-responsive embed-responsive-21by9">
-                        <iframe width="900" height="800" frameborder="0" scrolling="no" src="//plot.ly/~xiangzhe/5.embed?showlink=false"></iframe>
-                    </div>
-                </div>
+            <p style="font-size: 16px;">
+                &emsp;&emsp;
+                When you get the dataset of Amazon reviews, what’s your most concerning point? In this part, we are going to show you the very basic information of our dataset, which includes the inter-category rating comparison and over-year rating and review changing.
+            </p>
+
+            <h1 class="text-left" style="font-size: 22px">Average rating socre for each category</h1>
+            <p style="font-size: 16px;">
+                &emsp;&emsp;
+                We have 30 different categories here. Average rating is calculated from all of the reviews in the dataset. The average rating is all over score 4 for each category. Recalling our rating behaviours on Amazon, we never become very mean to books we buy,  after all we choose to buy and read it, which explains the relatively high average rating.
+            </p>
+            <div class="embed-responsive embed-responsive-21by9">
+                <iframe width="900" height="800" frameborder="0" scrolling="no" src="//plot.ly/~xiangzhe/5.embed?showlink=false"></iframe>
             </div>
 
-            <br>
-
-            <div class="card">
-                <div class="card-header">
-                    <span class="display-4" style="font-size: 18px">Rating score breakdown for each category</span>
-                </div>
-                <div class="card-block">
-                    <p style="font-size: 16px;">
-                        &emsp;&emsp;
-                    </p>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-block">
-                    <div class="embed-responsive embed-responsive-21by9">
-                        <iframe width="900" height="800" frameborder="0" scrolling="no" src="//plot.ly/~xiangzhe/3.embed?showlink=false"></iframe>
-                    </div>
-                </div>
+            <h1 class="text-left" style="font-size: 22px">Rating score breakdown for each category</h1>
+            <p style="font-size: 16px;">
+                &emsp;&emsp;
+                Rating breakdown gives us more detailed information about each category’s rating information. After sorting the percentage of 5 stars, the results becomes more intuitive. On the left of the diagram where percent of 5 is higher are books related with health and medicine, science and education, which are more scientific and professional topics. On the right of the diagram are books related with more personal or sensitive topics, like gay&lesbian, history, romance and humour and those books, due to individual difference, have less chance getting 5 stars as other kinds of books.
+            </p>
+            <div class="embed-responsive embed-responsive-21by9">
+                <iframe width="900" height="800" frameborder="0" scrolling="no" src="//plot.ly/~xiangzhe/3.embed?showlink=false"></iframe>
             </div>
 
-            <br>
+            <h1 class="text-left" style="font-size: 22px">Average rating score and total number of reviews over year</h1>
+            <p class="text-center">
+                <img src="../../img/AverageScoreOverYears.png" height=40% width=40%>
+            </p>
+            <p style="font-size: 16px;">
+                &emsp;&emsp;
+                Now, let’s focus on the over-year changing of ratings. Do people rate differently over year?
+                First of all, we have to relook at the distribution of the number of reviews we have for each year. Following shows the average rating of each year and also the number of review we collect in log scale. It’s obvious that we have very small number of reviews before 2010 and we have to  remove them from our analysis on over-time change.
+            </p>
 
-            <div class="card">
-                <div class="card-header">
-                    <span class="display-4" style="font-size: 18px">Average rating score and total number of reviews over year</span>
-                </div>
-                <div class="card-block">
-
-                    <p class="text-center">
-                        <img src="../../img/AverageScoreOverYears.png" height=40% width=40%>
-                    </p>
-                    <p style="font-size: 16px;">
-                        &emsp;&emsp;
-                    </p>
-                </div>
+            <h1 class="text-left" style="font-size: 22px">Rating score breakdown over year</h1>
+            <p style="font-size: 16px;">
+                &emsp;&emsp;
+                With reviews from 2010 to 2014, we are able to draw the annual rating breakdown. The interesting part here is reviewers are becoming more and more willing to give 5 stars. In 2014, there are more than 60% out of all reviews giving 5 stars compared to below 1.5% 1-star review. Something is changing but we don’t know yet. What happened actually?
+            </p>
+            <div class="embed-responsive embed-responsive-21by9">
+                <iframe width="900" height="800" frameborder="0" scrolling="no" src="//plot.ly/~xiangzhe/8.embed?showlink=false"></iframe>
             </div>
 
-            <br>
-
-            <div class="card">
-                <div class="card-header">
-                    <span class="display-4" style="font-size: 18px">Rating score breakdown over year</span>
-                </div>
-                <div class="card-block">
-                    <p style="font-size: 16px;">
-                        &emsp;&emsp;
-                    </p>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-block">
-                    <div class="embed-responsive embed-responsive-21by9">
-                        <iframe width="900" height="800" frameborder="0" scrolling="no" src="//plot.ly/~xiangzhe/8.embed?showlink=false"></iframe>
-                    </div>
-                </div>
-            </div>
 
             <br>
 
@@ -172,20 +140,15 @@
 
             <br>
 
-            <div class="card">
-                <div class="card-header">
-                    <span class="display-4" style="font-size: 18px">review 年度关键词变化</span>
-                </div>
-                <div class="card-block">
-                    <div style="position: relative; left: 50px; bottom:5px; width:90%;">
-                        <input id="year-slider" type="text" style="width:100%;" data-slider-min=2000 data-slider-max=2014 data-slider-step="1" data-slider-value=2017
-                               data-slider-tooltip="hide" />
-                    </div>
-                    <p class="text-center">
-                        <img id="word-cloud-year" src="../../img/word_cloud_year/2014.png" height=60% width=60%>
-                    </p>
-                </div>
+            <h1 class="text-left" style="font-size: 22px">review 年度关键词变化</h1>
+            <div style="position: relative; left: 50px; bottom:5px; width:90%;">
+                <input id="year-slider" type="text" style="width:100%;" data-slider-min=2000 data-slider-max=2014 data-slider-step="1" data-slider-value=2017
+                       data-slider-tooltip="hide" />
             </div>
+            <br>
+            <p class="text-center">
+                <img id="word-cloud-year" src="../../img/word_cloud_year/2014.png" height=60% width=60%>
+            </p>
             <div class="row"><br><br><br></div>
         </main>
     </div>

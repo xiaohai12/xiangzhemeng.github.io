@@ -85,48 +85,96 @@
             <h1 class="text-center" style="font-size: 30px">Review Analysis</h1>
 
             <h1 class="text-left" style="font-size: 22px">Relationship between rating score and review</h1>
-            <div class="card">
-                <div class="card-header">
-                    <span class="display-4" style="font-size: 18px">Label reviewText  － Intensive Analyzer</span>
-                </div>
-                <div class="card-block">
-                    <p class="text-center">
-                        <img src="../../img/diff_dist_by_category.png" height=43% width=43%>
-                        <img src="../../img/box_by_category.png" height=50% width=50%>
-                    </p>
-                </div>
+
+            <h1 class="text-left" style="font-size: 20px">Label reviewText  － Intensive Analyzer</h1>
+            <p class="text-center">
+                <img src="../../img/diff_dist_by_category.png" height=43% width=43%>
+                <img src="../../img/box_by_category.png" height=50% width=50%>
+            </p>
+
+            <h1 class="text-left" style="font-size: 20px">标点符号 & 每一种词性的对应比例</h1>
+            <p class="text-center">
+                <img src="../../img/radar.jpg" height=80% width=80%>
+            </p>
+            <div class="embed-responsive embed-responsive-21by9">
+                <iframe width="900" height="800" frameborder="0" scrolling="no" src="//plot.ly/~st999/114.embed?showlink=false"></iframe>
             </div>
 
+            <h1 class="text-left" style="font-size: 20px">Sentiment Analysis with Machine Learning</h1>
+            <p style="font-size: 16px;">
+                &emsp;&emsp;
+                As we have found that the review can give us a very reasonable predicted rating score compared to the real one, we decide to <ins>classify our review and train a prediction model</ins> for Amazon review, which means that we can generate a rating score automatically according to one’s review.
+            </p>
+            <p style="font-size: 16px;">
+                &emsp;&emsp;
+                <ins>Sentiment analysis</ins> is a natural language processing method that allows us to obtain the general sentiment or “feeling” on some text. In order to implement this classification, we choose to use <ins>fastText</ins> text classification for our sentiment analysis. FastText is an open-source, free, lightweight library created by FacebookResearch that allows users to learn text representations and text classifiers and we trained a supervised learning model with it.                    </p>
+            <p class="font-weight-bold" style="font-size: 16px;">
+                &emsp;&emsp;
+                Preprocess review text:
+            </p>
+            <p style="font-size: 16px;">
+                &emsp;&emsp;
+                Before train our model with the training data, we first did some data cleaning and preprocessing work.
+            </p>
+            <p style="font-size: 16px;">
+                &emsp;&emsp;
+                Here is a graph to present our procedure.
+            </p>
+            <ul style="font-size: 16px;">
+                <li>How average rating varies between different categories?</li>
+                <li>Chronologically, how the ratings of books change?</li>
+                <li>How to label or categorize or even score the reviews? e.g. How to define positive and negative reviews? (Sentiment analysis)</li>
+                <li>Can we get the keywords of reviews of each category? How do they change over years?</li>
+            </ul>
             <br>
-
-            <div class="card">
-                <div class="card-header">
-                    <span class="display-4" style="font-size: 18px">标点符号 & 每一种词性的对应比例</span>
-                </div>
-                <div class="card-block">
-                    <p style="font-size: 16px;">
-                        &emsp;&emsp;
-                    </p>
-                </div>
-            </div>
-
+            <p class="font-weight-bold" style="font-size: 16px;">
+                &emsp;&emsp;
+                Train model:
+            </p>
+            <p style="font-size: 16px;">
+                &emsp;&emsp;
+                At the very beginning, we tried to classify our reviews into 5 classifiers just like the 5 rating level defined by Amazon. Nevertheless, we couldn’t obtain a rational accuracy no matter how we preprocess our data or modify our training model.
+            </p>
+            <p class="text-center">
+                <img src="../../img/fasttext.png" height=80% width=80%>
+            </p>
+            <p style="font-size: 16px;">
+                &emsp;&emsp;
+                With curiosity, we had a look at serval review content, we found that we can hardly distinguish the reviews for rating score between 1-4. Hence, we decided to classify reviews only into 2 classifiers, we assigned all the 1-4 rating score's reviews into the same classifier.
+            </p>
             <br>
-
-            <div class="card">
-                <div class="card-header">
-                    <span class="display-4" style="font-size: 18px">Sentiment Analysis with Machine Learning</span>
-                </div>
-                <div class="card-block">
-                    <p style="font-size: 16px;">
-                        &emsp;&emsp;
-                    </p>
-                </div>
-            </div>
-
+            <p class="font-weight-bold" style="font-size: 16px;">
+                &emsp;&emsp;
+                Fit model & calculate accuracy:
+            </p>
+            <p class="text-center">
+                <img src="../../img/pred.png" height=80% width=80%>
+            </p>
+            <p style="font-size: 16px;">
+                &emsp;&emsp;
+                Initially we don’t do any preprocessing work and fit reviews directly into our model, the prediction accuracy is only 63%. After several data cleaning and preprocessing work, our accuracy improve up to 75%.
+            </p>
             <br>
+            <p class="font-weight-bold" style="font-size: 16px;">
+                &emsp;&emsp;
+                Result reflection:
+            </p>
+            <p style="font-size: 16px;">
+                &emsp;&emsp;
+                We admit that our result is not accurate enough. From our point of view, the main cause which leads to this accuracy level is the diversity of personal measuring standard.
+            </p>
+            <p style="font-size: 16px;">
+                &emsp;&emsp;
+                With the help of previous analysis, we found the personal measuring standard is quite diverse among customer. For instance, some customers always give a 5 rating score for one product even if they are not totally satisfied with it, which means that they may add some negative words in full rating score reviews.
+            </p>
+            <p style="font-size: 16px;">
+                &emsp;&emsp;
+                In order to conduct a more profound research on review classification, we plan to construct neural network models to improve the prediction accuracy in the future.
+            </p>
 
             <h1 class="text-left" style="font-size: 22px">Relationship between category and review</h1>
 
+            <h1 class="text-left" style="font-size: 20px">各种类评论数量 平均长度分布</h1>
             <div class="card">
                 <div class="card-header">
                     <span class="display-4" style="font-size: 18px">各种类评论数量 平均长度分布</span>
@@ -140,6 +188,7 @@
 
             <br>
 
+            <h1 class="text-left" style="font-size: 20px">6类关键词词云</h1>
             <div class="card">
                 <div class="card-header">
                     <span class="display-4" style="font-size: 18px">6类关键词词云</span>

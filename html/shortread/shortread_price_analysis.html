@@ -55,13 +55,13 @@
             </div>
             <ul class="nav nav-pills flex-column">
                 <li class="nav-item" style="font-size: larger;">
-                    <a class="nav-link" href="shortread_year_analysis.html">Year Analysis</a>
+                    <a class="nav-link" href="shortread_year_analysis.html">Reader loves short reads?</a>
                 </li>
                 <li class="nav-item" style="font-size: larger;">
-                    <a class="nav-link" href="shortread_category_analysis.html">Category Analysis</a>
+                    <a class="nav-link" href="shortread_category_analysis.html">Short reads lead to short review?</a>
                 </li>
                 <li class="nav-item" style="font-size: larger;">
-                    <a class="nav-link active" href="shortread_price_analysis.html">Price Analysis & Conclusion<span class="sr-only">(current)</span></a>
+                    <a class="nav-link active" href="shortread_price_analysis.html">Price plays an important role?<span class="sr-only">(current)</span></a>
                 </li>
             </ul>
 
@@ -80,43 +80,20 @@
 
         <!-- Main container -->
         <main class="col-sm-9 offset-sm-3 col-md-10 offset-md-2 pt-3">
-            <h1 class="text-center" style="font-size: 30px">Price Analysis for Kindle Short Read</h1>
-            <div class="card">
-                <div class="card-header">
-                    <span class="display-4" style="font-size: 20px">1</span>
-                </div>
-                <div class="card-block">
-                    <p style="font-size: 16px;">
-                        &emsp;&emsp;
-                    </p>
-                </div>
+            <h1 class="text-left" style="font-size: 22px">Price plays an important role? &emsp; It’s tricky to answer.</h1>
+            <p style="font-size: 16px;">
+                &emsp;&emsp;
+                First ,let’s have a look at price with average rating. We plot the average rating of each price group as well as the number of books in each group based on our dataset. There is some trend that higher price results in higher score, which is a little doubtable conclusion as we have fewer data in high price groups. But, one thing is for sure, low price does not lead to high average ratings, and people maybe are more care about the value of books not only the value of money.
+            </p>
+            <div class="embed-responsive embed-responsive-21by9">
+                <iframe width="900" height="800" frameborder="0" scrolling="no" src="//plot.ly/~st714/156.embed?showlink=false"></iframe>
             </div>
-            <div class="card">
-                <div class="card-block">
-                    <div class="embed-responsive embed-responsive-21by9">
-                        <iframe width="900" height="800" frameborder="0" scrolling="no" src="//plot.ly/~st714/156.embed?showlink=false"></iframe>
-                    </div>
-                </div>
-            </div>
-
-            <br>
-
-            <div class="card">
-                <div class="card-header">
-                    <span class="display-4" style="font-size: 20px">2</span>
-                </div>
-                <div class="card-block">
-                    <p style="font-size: 16px;">
-                        &emsp;&emsp;
-                    </p>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-block">
-                    <div class="embed-responsive embed-responsive-21by9">
-                        <iframe width="900" height="800" frameborder="0" scrolling="no" src="//plot.ly/~st714/150.embed?showlink=false"></iframe>
-                    </div>
-                </div>
+            <p style="font-size: 16px;">
+                &emsp;&emsp;
+                Now, turn our attention to reviews. Followings are the average length of reviews of each price group with the number of reviews. Lower price leads to shorter pages which leads to shorter length of reviews. And if the price is too high for short reads, the reviewers may not willing to write that long review again. But, after all, there are always personal influences behind it. We cannot draw any easy conclusion here.
+            </p>
+            <div class="embed-responsive embed-responsive-21by9">
+                <iframe width="900" height="800" frameborder="0" scrolling="no" src="//plot.ly/~st714/150.embed?showlink=false"></iframe>
             </div>
 
             <br>
