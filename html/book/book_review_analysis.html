@@ -88,8 +88,11 @@
 
             <h1 class="text-left" style="font-size: 20px">Label reviewText  － Intensive Analyzer</h1>
             <p class="text-center">
-                <img src="../../img/diff_dist_by_category.png" height=43% width=43%>
-                <img src="../../img/box_by_category.png" height=50% width=50%>
+                <img src="../../img/diff_dist_by_category.png" height=35% width=35%> &emsp;
+                <img src="../../img/box_by_category.png" height=40% width=40%>
+            </p>
+            <p class="text-center">
+                <img src="../../img/pred_accuracy.png" height=45% width=45%>
             </p>
 
             <h1 class="text-left" style="font-size: 20px">标点符号 & 每一种词性的对应比例</h1>
@@ -107,7 +110,9 @@
             </p>
             <p style="font-size: 16px;">
                 &emsp;&emsp;
-                <ins>Sentiment analysis</ins> is a natural language processing method that allows us to obtain the general sentiment or “feeling” on some text. In order to implement this classification, we choose to use <ins>fastText</ins> text classification for our sentiment analysis. FastText is an open-source, free, lightweight library created by FacebookResearch that allows users to learn text representations and text classifiers and we trained a supervised learning model with it.                    </p>
+                <ins>Sentiment analysis</ins> is a natural language processing method that allows us to obtain the general sentiment or “feeling” on some text. In order to implement this classification, we choose to use <ins>fastText</ins> text classification for our sentiment analysis. FastText is an open-source, free, lightweight library created by FacebookResearch that allows users to learn text representations and text classifiers and we trained a supervised learning model with it.
+            </p>
+
             <p class="font-weight-bold" style="font-size: 16px;">
                 &emsp;&emsp;
                 Preprocess review text:
@@ -118,15 +123,12 @@
             </p>
             <p style="font-size: 16px;">
                 &emsp;&emsp;
-                Here is a graph to present our procedure.
+                Here is a graph to present our data preprocessing procedure.
             </p>
-            <ul style="font-size: 16px;">
-                <li>How average rating varies between different categories?</li>
-                <li>Chronologically, how the ratings of books change?</li>
-                <li>How to label or categorize or even score the reviews? e.g. How to define positive and negative reviews? (Sentiment analysis)</li>
-                <li>Can we get the keywords of reviews of each category? How do they change over years?</li>
-            </ul>
-            <br>
+            <p class="text-center">
+                <img src="../../img/preprocess.png" width=80%>
+            </p>
+
             <p class="font-weight-bold" style="font-size: 16px;">
                 &emsp;&emsp;
                 Train model:
@@ -142,7 +144,7 @@
                 &emsp;&emsp;
                 With curiosity, we had a look at serval review content, we found that we can hardly distinguish the reviews for rating score between 1-4. Hence, we decided to classify reviews only into 2 classifiers, we assigned all the 1-4 rating score's reviews into the same classifier.
             </p>
-            <br>
+
             <p class="font-weight-bold" style="font-size: 16px;">
                 &emsp;&emsp;
                 Fit model & calculate accuracy:
@@ -154,7 +156,7 @@
                 &emsp;&emsp;
                 Initially we don’t do any preprocessing work and fit reviews directly into our model, the prediction accuracy is only 63%. After several data cleaning and preprocessing work, our accuracy improve up to 75%.
             </p>
-            <br>
+
             <p class="font-weight-bold" style="font-size: 16px;">
                 &emsp;&emsp;
                 Result reflection:
@@ -198,6 +200,7 @@
                         <input id="year-slider" type="text" style="width:100%;" data-slider-min=2000 data-slider-max=2014 data-slider-step="1" data-slider-value=2017
                                data-slider-tooltip="hide" />
                     </div>
+                    <br>
                     <p class="text-center">
                         <img id="word-cloud-year" src="../../img/word_cloud_year/2014.png" height=60% width=60%>
                     </p>
