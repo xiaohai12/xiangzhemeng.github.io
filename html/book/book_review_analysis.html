@@ -85,17 +85,45 @@
             <h1 class="text-center" style="font-size: 30px">Review Analysis</h1>
 
             <h1 class="text-left" style="font-size: 22px">Relationship between rating score and review</h1>
+            <p style="font-size: 16px;">
+                &emsp;&emsp;
+                Rating score directly shows people’s feeling about the book but in review reader would give more precise about his attitude and opinion or suggestion. It’s intuitively to say that good score leads to positive review and bad score must come with negative review. In this part, we want to challenge this “instinct”.
+            </p>
 
             <h1 class="text-left" style="font-size: 20px">Label reviewText  － Intensive Analyzer</h1>
+            <p style="font-size: 16px;">
+                &emsp;&emsp;
+                How to analysis review is a tricky question. Here, we choose to do it “easy” but effectively by scoring each sentence based on the sentiment strength. And after scaling it to 1-5, we treat the sentimental score as the “predicted” score for each review. We want to see if the sentiment difference directly reflect in the rating people scored.
+            </p>
+            <p style="font-size: 16px;">
+                &emsp;&emsp;
+                The first two plots, where we divide the reviews into different categories, we want to show you the difference between predicted true score. The one on the left is the distribution of the difference  which makes itself very clearly that for most of the review, the difference is small and the sentiment is connected with the score people give.
+            </p>
+            <p style="font-size: 16px;">
+                &emsp;&emsp;
+                On the other hand, the right one tells us the story from another perspective, in which the distribution of the predicted score for each true score of review is presented. Red is the 1 star and yellow is 5 star. The box-plot shows that the higher the true score is, the higher the connection between sentiment and review is. If the reviewer gives high score, it’s very likely that he is going write something nice. However, reviewers who rate 1 star would not say something really mean or negative. There would be something more neutral text or even productive suggestions on the books which of course results in the big red box in the plot for each category.
+            </p>
             <p class="text-center">
-                <img src="../../img/diff_dist_by_category.png" height=35% width=35%> &emsp;
+                <img src="../../img/diff_dist_by_category.png" height=35% width=35%> &emsp;&emsp;&emsp;
                 <img src="../../img/box_by_category.png" height=40% width=40%>
             </p>
+            <p style="font-size: 16px;">
+                &emsp;&emsp;
+                Following is the plot for evaluating our prediction in the sense of averaging. The size of each circle corresponding to the number of books we have in our dataset. Most of the categories lie in the neighbourhood of the red line that represents the zero difference between prediction and real score. Category of small size are likely to get higher difference, like law, history and engineering. It’s good and relief for us to see big circles are not far away from our red line which makes our predicted score more reasonable.
+            </p>
             <p class="text-center">
-                <img src="../../img/pred_accuracy.png" height=45% width=45%>
+                <img src="../../img/pred_accuracy.png" height=43% width=43%>
             </p>
 
-            <h1 class="text-left" style="font-size: 20px">标点符号 & 每一种词性的对应比例</h1>
+            <h1 class="text-left" style="font-size: 20px">Count Punctuation and Part Of Speech</h1>
+            <p style="font-size: 16px;">
+                &emsp;&emsp;
+                So, how people write review after scoring? What’s the style of each rating groups of reviewers? To  explain this, for each rating, we calculate the average percentage of adjective, adverb, noun, verb as well as exclamation point and question mark which are both highly relevant with people’s feelings. If we rescale the percent of each type to 0-1, we get following two plots. The first polar plot shows how different the style could be between each rating group and the second bar plots makes the difference readable in another way.
+            </p>
+            <p style="font-size: 16px;">
+                &emsp;&emsp;
+                The style of each rating group is obvious. Exclamation point is used more often in 5-star reviews to show how good the book is; conversely, 1-star reviewers love to use question mark to express their feelings after not-happy reading experience. The lower the score is, the more the adverb is, which might results from the fact that negative words like “not” and“never” are all adverbs. For adjective and verb, there is also slightly difference. High score group use more adjectives while low score group like to use more verbs. But for noun usage, the difference is not that clear.
+            </p>
             <p class="text-center">
                 <img src="../../img/radar.jpg" height=80% width=80%>
             </p>
@@ -175,37 +203,66 @@
             </p>
 
             <h1 class="text-left" style="font-size: 22px">Relationship between category and review</h1>
+            <p style="font-size: 16px;">
+                &emsp;&emsp;小海扯淡！！说明为什么选择6类
+            </p>
+            <div class="embed-responsive embed-responsive-21by9">
+                <iframe width="900" height="800" frameborder="0" scrolling="no" src="//plot.ly/~st714/174.embed?showlink=false"></iframe>
+            </div>
 
-            <h1 class="text-left" style="font-size: 20px">各种类评论数量 平均长度分布</h1>
-            <div class="card">
-                <div class="card-header">
-                    <span class="display-4" style="font-size: 18px">各种类评论数量 平均长度分布</span>
+            <h1 class="text-left" style="font-size: 20px">6类关键词词云</h1>
+            <div class="row" style="margin-left: 5px">
+                <div>
+                    <input type="radio" id="category1" name="category" value="romance" onclick="word_cloud_change(this.value)" checked="checked">
+                    <label for="category1" style="font-size: 15px;margin-left: 5px;">Romance</label>
                 </div>
-                <div class="card-block">
-                    <p style="font-size: 16px;">
-                        &emsp;&emsp;重点！！！！
-                    </p>
+
+                <div>
+                    <input style="margin-left: 15px" type="radio" id="category2" name="category" value="children" onclick="word_cloud_change(this.value)">
+                    <label for="category2" style="font-size: 15px;margin-left: 5px;">Children's Books</label>
+                </div>
+
+                <div>
+                    <input style="margin-left: 15px" type="radio" id="category3" name="category" value="business" onclick="word_cloud_change(this.value)">
+                    <label for="category3" style="font-size: 15px;margin-left: 5px;">Business & Money</label>
+                </div>
+
+                <div>
+                    <input style="margin-left: 15px" type="radio" id="category4" name="category" value="biographies" onclick="word_cloud_change(this.value)">
+                    <label for="category4" style="font-size: 15px;margin-left: 5px;">Biographies & Memoirs</label>
+                </div>
+
+                <div>
+                    <input style="margin-left: 15px" type="radio" id="category5" name="category" value="home" onclick="word_cloud_change(this.value)">
+                    <label for="category5" style="font-size: 15px;margin-left: 5px;">Crafts, Hobbies & Home</label>
+                </div>
+
+                <div>
+                    <input style="margin-left: 15px" type="radio" id="category6" name="category" value="health" onclick="word_cloud_change(this.value)">
+                    <label for="category6" style="font-size: 15px;margin-left: 5px;">Health, Fitness & Dieting</label>
                 </div>
             </div>
 
             <br>
 
-            <h1 class="text-left" style="font-size: 20px">6类关键词词云</h1>
-            <div class="card">
-                <div class="card-header">
-                    <span class="display-4" style="font-size: 18px">6类关键词词云</span>
-                </div>
-                <div class="card-block">
-                    <div style="position: relative; left: 50px; bottom:5px; width:90%;">
-                        <input id="year-slider" type="text" style="width:100%;" data-slider-min=2000 data-slider-max=2014 data-slider-step="1" data-slider-value=2017
-                               data-slider-tooltip="hide" />
-                    </div>
-                    <br>
-                    <p class="text-center">
-                        <img id="word-cloud-year" src="../../img/word_cloud_year/2014.png" height=60% width=60%>
-                    </p>
-                </div>
+            <p class="text-center">
+                <img id="word-cloud-category" style="width: 400px" src="../../img/word_cloud_category/romance.png" height="40%" width="40%">
+            </p>
+            <p style="font-size: 16px;">
+                &emsp;&emsp;小海扯淡！！说明为什么选择6类
+            </p>
+
+            <br>
+
+            <h1 class="text-left" style="font-size: 20px">各种类评论数量 平均长度分布</h1>
+            <p style="font-size: 16px;">
+                &emsp;&emsp;小海扯淡！！review长度 年度变化 ！！！！
+            </p>
+            <div class="embed-responsive embed-responsive-21by9">
+                <iframe width="900" height="800" frameborder="0" scrolling="no" src="//plot.ly/~xiangzhe/16.embed?showlink=false"></iframe>
             </div>
+            <div class="embed-responsive embed-responsive-21by9">
+                <iframe width="900" height="800" frameborder="0" scrolling="no" src="//plot.ly/~st714/170.embed?showlink=false"></iframe>            </div>
             <div class="row"><br><br><br></div>
         </main>
     </div>
