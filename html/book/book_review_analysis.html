@@ -141,16 +141,97 @@
                 First of all, we computed the number of vocabulary presented in all 5 rates’ reviews for each part of speech. We observe that there are a large amount of high frequency words presenting in all 5 levels.
             </p>
             <p class="text-center">
-                <img src="../../img/frequency.png" height=50% width=50%>
+                <img src="../../img/frequency.png" height=45% width=45%>
             </p>
             <p style="font-size: 16px;">
                 &emsp;&emsp;
                 As everybody knows that the most sensitive word to express one’s emotion is adjective word and noun word can always provide us the main idea or topic of one’s statement. Hence, we had a look at the most frequent adjective and noun words presented in all 5 levels.
             </p>
-            <p style="font-size: 16px;">
-                &emsp;&emsp;
-                表格
-            </p>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <p class="text-center" style="font-size: 16px;">
+                        <ins>High Frequency Noun Words in Common</ins>
+                    </p>
+                    <table class="table table-hover text-center" >
+                        <tbody>
+                        <tr class="table-success">
+                            <td class="font-weight-bold">woman</td>
+                            <td class="font-weight-bold">man</td>
+                            <td class="font-weight-bold">end</td>
+                            <td class="font-weight-bold">life</td>
+                            <td class="font-weight-bold">people</td>
+                            <td class="font-weight-bold">who</td>
+                        </tr>
+                        <tr class="table-info">
+                            <td class="font-weight-bold">series</td>
+                            <td class="font-weight-bold">novel</td>
+                            <td class="font-weight-bold">thing</td>
+                            <td class="font-weight-bold">one</td>
+                            <td class="font-weight-bold">scene</td>
+                            <td class="font-weight-bold">love</td>
+                        </tr>
+                        <tr class="table-warning">
+                            <td class="font-weight-bold">romance</td>
+                            <td class="font-weight-bold">character</td>
+                            <td class="font-weight-bold">what</td>
+                            <td class="font-weight-bold">author</td>
+                            <td class="font-weight-bold">book</td>
+                            <td class="font-weight-bold">time</td>
+                        </tr>
+                        <tr class="table-danger">
+                            <td class="font-weight-bold">lot</td>
+                            <td class="font-weight-bold">story</td>
+                            <td class="font-weight-bold">way</td>
+                            <td class="font-weight-bold"></td>
+                            <td class="font-weight-bold"></td>
+                            <td class="font-weight-bold"></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="col-md-6">
+                    <p class="text-center" style="font-size: 16px;">
+                        <ins>High Frequency Adjective Words in Common</ins>
+                    </p>
+                    <table class="table table-hover text-center" >
+                        <tbody>
+                        <tr class="table-success">
+                            <td class="font-weight-bold">good</td>
+                            <td class="font-weight-bold">interesting</td>
+                            <td class="font-weight-bold">more</td>
+                            <td class="font-weight-bold">different</td>
+                            <td class="font-weight-bold">-PRON-</td>
+                            <td class="font-weight-bold">much</td>
+                        </tr>
+                        <tr class="table-info">
+                            <td class="font-weight-bold">other</td>
+                            <td class="font-weight-bold">great</td>
+                            <td class="font-weight-bold">which</td>
+                            <td class="font-weight-bold">all</td>
+                            <td class="font-weight-bold">many</td>
+                            <td class="font-weight-bold">long</td>
+                        </tr>
+                        <tr class="table-warning">
+                            <td class="font-weight-bold">little</td>
+                            <td class="font-weight-bold">that</td>
+                            <td class="font-weight-bold">few</td>
+                            <td class="font-weight-bold">worth</td>
+                            <td class="font-weight-bold">free</td>
+                            <td class="font-weight-bold">new</td>
+                        </tr>
+                        <tr class="table-danger">
+                            <td class="font-weight-bold">short</td>
+                            <td class="font-weight-bold">such</td>
+                            <td class="font-weight-bold">hot</td>
+                            <td class="font-weight-bold">first</td>
+                            <td class="font-weight-bold"></td>
+                            <td class="font-weight-bold"></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
             <p style="font-size: 16px;">
                 &emsp;&emsp;
                 From the two tables above, we found that words like book, story, character, romance, love, life have a truly high frequency in all the 5 rates’ reviews. All these words are used to describe a book and tell reader’s feeling and perception. Thus, we can conclude that most of the reviews are book content oriented instead of describing their user experience of Kindle.
@@ -242,32 +323,32 @@
             <h1 class="text-left" style="font-size: 20px">6类关键词词云</h1>
             <div class="row" style="margin-left: 5px">
                 <div>
-                    <input type="radio" id="category1" name="category" value="romance" onclick="word_cloud_change(this.value)" checked="checked">
+                    <input type="radio" id="category1" name="category" value="romance" onchange="word_cloud_change(this.value)" checked="checked">
                     <label for="category1" style="font-size: 15px;margin-left: 5px;">Romance</label>
                 </div>
 
                 <div>
-                    <input style="margin-left: 15px" type="radio" id="category2" name="category" value="children" onclick="word_cloud_change(this.value)">
+                    <input style="margin-left: 15px" type="radio" id="category2" name="category" value="children" onchange="word_cloud_change(this.value)">
                     <label for="category2" style="font-size: 15px;margin-left: 5px;">Children's Books</label>
                 </div>
 
                 <div>
-                    <input style="margin-left: 15px" type="radio" id="category3" name="category" value="business" onclick="word_cloud_change(this.value)">
+                    <input style="margin-left: 15px" type="radio" id="category3" name="category" value="business" onchange="word_cloud_change(this.value)">
                     <label for="category3" style="font-size: 15px;margin-left: 5px;">Business & Money</label>
                 </div>
 
                 <div>
-                    <input style="margin-left: 15px" type="radio" id="category4" name="category" value="biographies" onclick="word_cloud_change(this.value)">
+                    <input style="margin-left: 15px" type="radio" id="category4" name="category" value="biographies" onchange="word_cloud_change(this.value)">
                     <label for="category4" style="font-size: 15px;margin-left: 5px;">Biographies & Memoirs</label>
                 </div>
 
                 <div>
-                    <input style="margin-left: 15px" type="radio" id="category5" name="category" value="home" onclick="word_cloud_change(this.value)">
+                    <input style="margin-left: 15px" type="radio" id="category5" name="category" value="home" onchange="word_cloud_change(this.value)">
                     <label for="category5" style="font-size: 15px;margin-left: 5px;">Crafts, Hobbies & Home</label>
                 </div>
 
                 <div>
-                    <input style="margin-left: 15px" type="radio" id="category6" name="category" value="health" onclick="word_cloud_change(this.value)">
+                    <input style="margin-left: 15px" type="radio" id="category6" name="category" value="health" onchange="word_cloud_change(this.value)">
                     <label for="category6" style="font-size: 15px;margin-left: 5px;">Health, Fitness & Dieting</label>
                 </div>
             </div>
