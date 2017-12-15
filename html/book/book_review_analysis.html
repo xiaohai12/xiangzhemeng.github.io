@@ -115,7 +115,7 @@
                 <img src="../../img/pred_accuracy.png" height=43% width=43%>
             </p>
 
-            <h1 class="text-left" style="font-size: 20px">Count Punctuation and Part Of Speech</h1>
+            <h1 class="text-left" style="font-size: 20px">Quantitative Statistics of Punctuation and Part Of Speech</h1>
             <p style="font-size: 16px;">
                 &emsp;&emsp;
                 So, how people write review after scoring? What’s the style of each rating groups of reviewers? To  explain this, for each rating, we calculate the average percentage of adjective, adverb, noun, verb as well as exclamation point and question mark which are both highly relevant with people’s feelings. If we rescale the percent of each type to 0-1, we get following two plots. The first polar plot shows how different the style could be between each rating group and the second bar plots makes the difference readable in another way.
@@ -130,6 +130,35 @@
             <div class="embed-responsive embed-responsive-21by9">
                 <iframe width="900" height="800" frameborder="0" scrolling="no" src="//plot.ly/~st999/114.embed?showlink=false"></iframe>
             </div>
+
+            <h1 class="text-left" style="font-size: 20px">High Frequency Vocabulary Statistics for each Part Of Speech</h1>
+            <p style="font-size: 16px;">
+                &emsp;&emsp;
+                After finishing our quantitative statistics of part of speech, we conducted a high frequency vocabulary statistics for each part of speech as well. We collected top 50 frequent words and relevant frequency for each part of speech: noun, verb; adjective and adverb. This part of research mainly aims at observing the word-use difference and sameness among 5 rates and pinpointing the emphasis of the review(user experience of Kindle, content of books etc.)
+            </p>
+            <p style="font-size: 16px;">
+                &emsp;&emsp;
+                First of all, we computed the number of vocabulary presented in all 5 rates’ reviews for each part of speech. We observe that there are a large amount of high frequency words presenting in all 5 levels.
+            </p>
+            <p class="text-center">
+                <img src="../../img/frequency.png" height=50% width=50%>
+            </p>
+            <p style="font-size: 16px;">
+                &emsp;&emsp;
+                As everybody knows that the most sensitive word to express one’s emotion is adjective word and noun word can always provide us the main idea or topic of one’s statement. Hence, we had a look at the most frequent adjective and noun words presented in all 5 levels.
+            </p>
+            <p style="font-size: 16px;">
+                &emsp;&emsp;
+                表格
+            </p>
+            <p style="font-size: 16px;">
+                &emsp;&emsp;
+                From the two tables above, we found that words like book, story, character, romance, love, life have a truly high frequency in all the 5 rates’ reviews. All these words are used to describe a book and tell reader’s feeling and perception. Thus, we can conclude that most of the reviews are book content oriented instead of describing their user experience of Kindle.
+            </p>
+            <p style="font-size: 16px;">
+                &emsp;&emsp;
+                Moreover, positive words like good, great are high frequency words in all 5 levels. However, common negative words like bad, worse are not presented in the table. With curiosity, we sampled some 1 and 2 rates’ reviews which contains positive words good. Surprisingly, about 6 among 10 reviews are totally positive or neutral reviews, there isn’t any negative adverb like not embellishing those positive adjective. Therefore, we can roughly claim that the sentiment of reviews are not positively correlative with the rating score, which perhaps leads a imprecise result for review’s sentiment analysis.
+            </p>
 
             <h1 class="text-left" style="font-size: 20px">Sentiment Analysis with Machine Learning</h1>
             <p style="font-size: 16px;">
