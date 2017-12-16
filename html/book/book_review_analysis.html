@@ -314,13 +314,22 @@
 
             <h1 class="text-left" style="font-size: 22px">Relationship between category and review</h1>
             <p style="font-size: 16px;">
-                &emsp;&emsp;小海扯淡！！说明为什么选择6类
+                &emsp;&emsp;
+                In this part, we mainly would like to discover the relationship between the review content and the corresponding category. As one book can be classified into several different categories at the same time, we are supposed to choose categories which don’t have so many books in common to conduct our analysis.
+            </p>
+            <p style="font-size: 16px;">
+                &emsp;&emsp;
+                This confusion matrix heat map provides a rational proof for our choice. The mutual books are truly rare among these categories.
             </p>
             <div class="embed-responsive embed-responsive-21by9">
                 <iframe width="900" height="800" frameborder="0" scrolling="no" src="//plot.ly/~st714/174.embed?showlink=false"></iframe>
             </div>
 
-            <h1 class="text-left" style="font-size: 20px">6类关键词词云</h1>
+            <h1 class="text-left" style="font-size: 20px">Word Cloud for 6 Categories</h1>
+            <p style="font-size: 16px;">
+                &emsp;&emsp;
+                After drawing the word clouds for those high frequency words of each category’s reviews, we claim that the review content is indeed positively correlative with their book’s category. For instance, the keywords of children’s book are tale, fantasy, conjurer, young and kid etc. Obviously, all these words are child oriented and from the word cloud, we can conclude that most reviews of this category concentrate more on the content of book and opinions on whether one book is suitable for kids.
+            </p>
             <div class="row" style="margin-left: 5px">
                 <div>
                     <input type="radio" id="category1" name="category" value="romance" onchange="word_cloud_change(this.value)" checked="checked">
@@ -358,21 +367,7 @@
             <p class="text-center">
                 <img id="word-cloud-category" src="../../img/word_cloud_category/romance.png" height="40%" width="40%">
             </p>
-            <p style="font-size: 16px;">
-                &emsp;&emsp;小海扯淡！！说明为什么选择6类
-            </p>
 
-            <br>
-
-            <h1 class="text-left" style="font-size: 20px">各种类评论数量 平均长度分布</h1>
-            <p style="font-size: 16px;">
-                &emsp;&emsp;小海扯淡！！review长度 年度变化 ！！！！
-            </p>
-            <div class="embed-responsive embed-responsive-21by9">
-                <iframe width="900" height="800" frameborder="0" scrolling="no" src="//plot.ly/~xiangzhe/16.embed?showlink=false"></iframe>
-            </div>
-            <div class="embed-responsive embed-responsive-21by9">
-                <iframe width="900" height="800" frameborder="0" scrolling="no" src="//plot.ly/~st714/170.embed?showlink=false"></iframe>            </div>
             <div class="row"><br><br><br></div>
         </main>
     </div>

@@ -81,10 +81,24 @@
 
         <!-- Main container -->
         <main class="col-sm-9 offset-sm-3 col-md-10 offset-md-2 pt-3">
-            <h1 class="text-center" style="font-size: 30px">General Analysis about Rating Score and Review</h1>
+            <h1 class="text-center" style="font-size: 30px">General Analysis</h1>
             <p style="font-size: 16px;">
                 &emsp;&emsp;
                 When you get the dataset of Amazon reviews, what’s your most concerning point? In this part, we are going to show you the very basic information of our dataset, which includes the inter-category rating comparison and over-year rating and review changing.
+            </p>
+
+            <h1 class="text-left" style="font-size: 20px">Average Number of Reviews for Each Category</h1>
+            <p style="font-size: 16px;">
+                &emsp;&emsp;
+                The average number of reviews is computed by the total number of reviews of one category divided by the total number of books of this category, which indicates that the result can also implicitly present the sales volume of each category.
+            </p>
+            <div class="embed-responsive embed-responsive-21by9">
+                <iframe width="900" height="800" frameborder="0" scrolling="no" src="//plot.ly/~xiangzhe/16.embed?showlink=false"></iframe>
+            </div>
+            <br>
+            <p style="font-size: 16px;">
+                &emsp;&emsp;
+                Evidently, categories like Romance, Literature & Fiction and Mystery, Thriller & Suspense possess relatively higher average number of reviews. Hence, we can claim that readers prefer reading literature fictions on Kindle, which leads a greater number of reviews concerning those books. Furthermore, Teen & Young Adult readings have more reviews as well. In order to discover the secret behind this phenomenon, we collected all the reviews of this category. After sampling several reviews, we find that most reviews aims at recommendation or pointing out drawbacks of one book so as to help other parents choose suitable books for their kids.
             </p>
 
             <h1 class="text-left" style="font-size: 22px">Average rating score for each category</h1>
@@ -125,18 +139,6 @@
                 <iframe width="900" height="800" frameborder="0" scrolling="no" src="//plot.ly/~xiangzhe/8.embed?showlink=false"></iframe>
             </div>
 
-
-            <br>
-
-            <h1 class="text-left" style="font-size: 22px">Review's Length Fluctuation Over Year</h1>
-            <p style="font-size: 16px;">
-                &emsp;&emsp;小海扯淡！！review长度 年度变化 ！！！！
-            </p>
-            <div class="embed-responsive embed-responsive-21by9">
-                <iframe width="900" height="800" frameborder="0" scrolling="no" src="//plot.ly/~xiangzhe/30.embed?showlink=false"></iframe>
-            </div>
-            <br>
-
             <h1 class="text-left" style="font-size: 22px">Review Key Words Cloud Over Year</h1>
             <div style="position: relative; left: 50px; bottom:5px; width:90%;">
                 <input id="year-slider" type="text" style="width:100%;" data-slider-min=2000 data-slider-max=2014 data-slider-step="1" data-slider-value=2017
@@ -147,7 +149,16 @@
                 <img id="word-cloud-year" src="../../img/word_cloud_year/2014.png" height=50% width=50%>
             </p>
             <p style="font-size: 16px;">
-                &emsp;&emsp;小海扯淡！！review长度 年度变化 ！！！！
+                &emsp;&emsp;
+                Reviews are not only about books, but also reflect how people speak every year. Keyword statistics may be slightly different from hot words, but generally reflect the annual theme. Under this assumption, we build the word-cloud for each year, and try to find the interesting changes overtime.
+            </p>
+            <p style="font-size: 16px;">
+                &emsp;&emsp;
+                As the word-cloud shows, the most popular words were changing every year: character, author, time (2010); character, novel, read (2011); novel, recipe, author (2012); people, character, series (2013); character, twist, read (2014). Do you recall anything from those words?
+            </p>
+            <p style="font-size: 16px;">
+                &emsp;&emsp;
+                For example, if we choose 2013, of which we have large number of books, besides common words like “good” or “really”, we can also find more specific words like “series”, “character” and “time” which indicates reviewers’ general concern about book meanwhile the big “first” partly reflects that most of the readers read the book for the first time.
             </p>
             <div class="row"><br><br><br></div>
         </main>
