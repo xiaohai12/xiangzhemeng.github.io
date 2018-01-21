@@ -18,15 +18,15 @@
       <div class="collapse navbar-collapse" id="navbarsExampleDefault">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="#network">Network <span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="#network">Random Network</a>
           </li>
           <li class="nav-item active">
-            <a class="nav-link" href="#circle">Circle</a>
+            <a class="nav-link" href="#circle">Circle Network</a>
           </li>
 
         </ul>
         <h3 style="color:white;" class="navbar-brand my-2 my-lg-0">
-          Final Project Presentation
+          Graph Presentation
         </h3>
       </div>
     </nav>
@@ -34,19 +34,44 @@
     <div class="container">
       <div class="content-wrapper" style="margin-left: 50px;margin-right: 50px">
         <div class="starter-template">
-          <h1>NTDS Project</h1>
+          <h1>Amazon Electronic Product Network Analysis</h1>
           <p class="lead">
             Süha Kagan Köse - Tao Sun - Xiangzhe Meng - Xingce Bao
             <br>
           </p>
         </div>
         <div class="container-fluid">
-          <div class="card text-center">
-            <div class="card-body" id="network" style="margin-top: 10px;margin-bottom: 10px"></div>
+          <div class="card">
+            <div class="card-header">
+              <div class="display-4 text-left" style="font-size: 20px">
+                Random Network
+                <hr>
+              </div>
+              <div style="font-size: 15px">
+                The graph present all the links among all the Macbook and Surface related products.
+                If there are plenty of connections among several products, the position of these products will be very close and from a stable cluster.
+                <br>
+                In order to verify if the prducts in one cluster are related to the same original product, we use different color to present <span style="color: #2077B4">Macbook related products(dark blue)</span> and <span style="color: #AEC7E8">Surface related products(light blue)</span>.
+              </div>
+            </div>
+            <div class="card-body text-center" id="network" style="margin-top: 10px;margin-bottom: 10px"></div>
           </div>
           <br>
-          <div class="card text-center">
-            <div class="card-body" id="circle" style="margin-top: 10px;margin-bottom: 10px"></div>
+          <div class="card">
+            <div class="card-header">
+              <div class="display-4 text-left" style="font-size: 20px">
+                Circle Network
+                <hr>
+              </div>
+              <div style="font-size: 15px">
+                The left part of the circle are Surface related products and the right part are Macbook related products.
+                Most links connect the nodes situated at the same side of the circle.
+                There are only a few links coming cross the circle from one side to the other side.
+                <br>
+                Hence, Surface related products and Macbook related products form two relatively apparent clusters in the network.
+              </div>
+            </div>
+            <div class="card-body text-center" id="circle" style="margin-top: 10px;margin-bottom: 10px"></div>
           </div>
         </div>
       </div>

@@ -1,5 +1,5 @@
 var width = 950,
-    height = 600;
+    height = 750;
 
 var svg = d3.select("#network").append("svg")
     .attr("width", width)
